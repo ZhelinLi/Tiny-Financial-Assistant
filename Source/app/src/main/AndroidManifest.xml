@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.tfa">
+package="com.example.tfa">
 
     <application
         android:allowBackup="true"
@@ -16,9 +16,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            //android:label="@string/title_activity_main"
-            //android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity android:name=".ReportActivity"></activity>
     </application>
 
 </manifest>
