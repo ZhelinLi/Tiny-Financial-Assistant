@@ -36,6 +36,8 @@ public class TypeActivity extends AppCompatActivity {
         pieChart.setHoleColor(Color.WHITE);
         pieChart.setTransparentCircleRadius(61f);
         pieChart.setRotationEnabled(false);
+        pieChart.getLegend().setEnabled(false);
+        pieChart.setTouchEnabled(true);
 
         ArrayList<PieEntry> dollars = new ArrayList<>();
         dollars.add(new PieEntry(350f, "Food"));
