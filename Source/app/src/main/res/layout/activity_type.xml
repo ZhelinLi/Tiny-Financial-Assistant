@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context=".TypeActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:gravity="center"
+        android:textSize="48dp"
+        android:text="$2000" />
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</android.widget.LinearLayout>
