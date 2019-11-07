@@ -1,110 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="6dp">
+    tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/editText"
+    <TextView
+        android:id="@+id/summary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="50dp"
-        android:ems="10"
-        android:hint="Enter Money"
-        android:inputType="number" />
+        android:layout_margin="25dp"
+        android:gravity="center"
+        android:textSize="48dp"
+        android:text="Summary" />
 
-    <Button
-        android:id="@+id/Food"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editText"
-        android:layout_marginTop="53dp"
-        android:text="Food" />
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pieChart"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@+id/summary" />
 
-    <Button
-        android:id="@+id/Transportation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editText"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="53dp"
-        android:layout_toRightOf="@+id/Food"
-        android:text="Transportation" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/pieChart">
 
-    <Button
-        android:id="@+id/Study"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editText"
-        android:layout_marginLeft="37dp"
-        android:layout_marginTop="53dp"
-        android:layout_toRightOf="@+id/Transportation"
-        android:text="Study" />
+        <Button
+            android:id="@+id/inputButton"
+            android:layout_marginLeft="75dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="input" />
 
-    <Button
-        android:id="@+id/Housing"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Food"
-        android:layout_marginTop="60dp"
-        android:text="Housing" />
+        <Button
+            android:id="@+id/typeButton"
+            android:layout_marginLeft="75dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="type" />
 
-    <Button
-        android:id="@+id/Entertainment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Transportation"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="60dp"
-        android:layout_toRightOf="@+id/Housing"
-        android:text="Entertainment" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/Shopping"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Study"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="60dp"
-        android:layout_toRightOf="@+id/Entertainment"
-        android:text="Shopping" />
 
-    <Button
-        android:id="@+id/Cleaning"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Shopping"
-        android:layout_marginTop="60dp"
-        android:text="Cleaning" />
-
-    <Button
-        android:id="@+id/PersonalCare"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Entertainment"
-        android:layout_marginLeft="47dp"
-        android:layout_marginTop="60dp"
-        android:layout_toRightOf="@+id/Cleaning"
-        android:text="Personal Care" />
-
-    <Button
-        android:id="@+id/Hobby"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Shopping"
-        android:layout_toRightOf="@+id/PersonalCare"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="60dp"
-        android:text="Hobby" />
-
-    <Button
-        android:id="@+id/Other"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Cleaning"
-        android:layout_marginTop="60dp"
-        android:text="Other" />
 </RelativeLayout>

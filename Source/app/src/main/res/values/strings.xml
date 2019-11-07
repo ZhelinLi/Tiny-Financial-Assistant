@@ -1,15 +1,6 @@
 <resources>
-    <string name="app_name">tfa</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
-
-    <string name="menu_input">Home</string>
-    <string name="menu_report">Report</string>
-    <string name="menu_types">Types</string>
-    <string name="menu_settings">Settings</string>
+    <string name="app_name">Tiny Financial Assistant</string>
+    <string name="type_dis_day">by day</string>
+    <string name="type_dis_week">by week</string>
+    <string name="type_dis_month">by month</string>
 </resources>
