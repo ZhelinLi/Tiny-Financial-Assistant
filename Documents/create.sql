@@ -89,6 +89,19 @@ CREATE TABLE List (
     ID INT,
     PRIMARY KEY (typeID, ID),
     FOREIGN KEY (typeID) REFERENCES Type,
+    CASE
+        WHEN (typeID = 1) THEN CHECK ID IN Food
+        WHEN (typeID = 2) THEN CHECK ID IN Transportation
+        WHEN (typeID = 3) THEN CHECK ID IN Study
+        WHEN (typeID = 4) THEN CHECK ID IN Housing
+        WHEN (typeID = 5) THEN CHECK ID IN Entertainment
+        WHEN (typeID = 6) THEN CHECK ID IN Shopping
+        WHEN (typeID = 7) THEN CHECK ID IN Cleaning
+        WHEN (typeID = 8) THEN CHECK ID IN Personal
+        WHEN (typeID = 9) THEN CHECK ID IN Hobby
+        ELSE CHECK (ID IN Other)
+    END
+    /*
     FOREIGN KEY (ID) REFERENCES Food,
     FOREIGN KEY (ID) REFERENCES Transportation,
     FOREIGN KEY (ID) REFERENCES Study,
@@ -99,4 +112,5 @@ CREATE TABLE List (
     FOREIGN KEY (ID) REFERENCES Personal,
     FOREIGN KEY (ID) REFERENCES Hobby,
     FOREIGN KEY (ID) REFERENCES Other,
+    */
 )
