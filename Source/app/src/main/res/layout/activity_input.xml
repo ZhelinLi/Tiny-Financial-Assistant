@@ -6,104 +6,113 @@
     android:padding="6dp">
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/inputEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="50dp"
         android:ems="10"
         android:hint="Enter Money"
-        android:inputType="number" />
+        android:inputType="numberDecimal" />
 
     <Button
-        android:id="@+id/Food"
+        android:id="@+id/inputFoodButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText"
+        android:layout_below="@+id/inputEditText"
         android:layout_marginTop="53dp"
         android:text="Food" />
 
     <Button
-        android:id="@+id/Transportation"
+        android:id="@+id/inputTransportationButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText"
+        android:layout_below="@+id/inputEditText"
         android:layout_marginLeft="44dp"
         android:layout_marginTop="53dp"
-        android:layout_toRightOf="@+id/Food"
+        android:layout_toRightOf="@+id/inputFoodButton"
         android:text="Transportation" />
 
     <Button
-        android:id="@+id/Study"
+        android:id="@+id/inputStudyButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText"
+        android:layout_below="@+id/inputEditText"
         android:layout_marginLeft="37dp"
         android:layout_marginTop="53dp"
-        android:layout_toRightOf="@+id/Transportation"
+        android:layout_toRightOf="@+id/inputTransportationButton"
         android:text="Study" />
 
     <Button
-        android:id="@+id/Housing"
+        android:id="@+id/inputHousingButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Food"
+        android:layout_below="@+id/inputFoodButton"
         android:layout_marginTop="60dp"
         android:text="Housing" />
 
     <Button
-        android:id="@+id/Entertainment"
+        android:id="@+id/inputEntertainmentButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Transportation"
+        android:layout_below="@+id/inputTransportationButton"
         android:layout_marginLeft="45dp"
         android:layout_marginTop="60dp"
-        android:layout_toRightOf="@+id/Housing"
+        android:layout_toRightOf="@+id/inputHousingButton"
         android:text="Entertainment" />
 
     <Button
-        android:id="@+id/Shopping"
+        android:id="@+id/inputShoppingButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Study"
+        android:layout_below="@+id/inputStudyButton"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="60dp"
-        android:layout_toRightOf="@+id/Entertainment"
+        android:layout_toRightOf="@+id/inputEntertainmentButton"
         android:text="Shopping" />
 
     <Button
-        android:id="@+id/Cleaning"
+        android:id="@+id/inputCleaningButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Shopping"
+        android:layout_below="@+id/inputShoppingButton"
         android:layout_marginTop="60dp"
         android:text="Cleaning" />
 
     <Button
-        android:id="@+id/PersonalCare"
+        android:id="@+id/inputPersonalCareButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Entertainment"
+        android:layout_below="@+id/inputEntertainmentButton"
         android:layout_marginLeft="47dp"
         android:layout_marginTop="60dp"
-        android:layout_toRightOf="@+id/Cleaning"
+        android:layout_toRightOf="@+id/inputCleaningButton"
         android:text="Personal Care" />
 
     <Button
-        android:id="@+id/Hobby"
+        android:id="@+id/inputHobbyButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Shopping"
-        android:layout_toRightOf="@+id/PersonalCare"
+        android:layout_below="@+id/inputShoppingButton"
+        android:layout_toRightOf="@+id/inputPersonalCareButton"
         android:layout_marginLeft="35dp"
         android:layout_marginTop="60dp"
         android:text="Hobby" />
 
     <Button
-        android:id="@+id/Other"
+        android:id="@+id/inputOtherButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Cleaning"
+        android:layout_below="@+id/inputCleaningButton"
         android:layout_marginTop="60dp"
         android:text="Other" />
+
+    <Button
+        android:id="@+id/inputAddItemButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputCleaningButton"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="60dp"
+        android:text="add item" />
 </RelativeLayout>
