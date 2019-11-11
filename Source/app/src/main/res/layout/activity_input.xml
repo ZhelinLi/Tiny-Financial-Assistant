@@ -5,14 +5,36 @@
     android:layout_height="match_parent"
     android:padding="6dp">
 
+    <TextView
+        android:id="@+id/dollorsign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$"
+        android:textSize="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        />
+
     <EditText
         android:id="@+id/inputEditText"
         android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="10dp"
+        android:ems="20"
+        android:hint="Enter Money"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/inputNote"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="0dp"
         android:ems="10"
-        android:hint="Enter Money"
+        android:hint="Enter Note"
         android:inputType="numberDecimal" />
 
     <Button
@@ -20,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/inputEditText"
-        android:layout_marginTop="53dp"
+        android:layout_marginTop="71dp"
         android:text="Food" />
 
     <Button
@@ -29,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/inputEditText"
         android:layout_marginLeft="44dp"
-        android:layout_marginTop="53dp"
+        android:layout_marginTop="73dp"
         android:layout_toRightOf="@+id/inputFoodButton"
         android:text="Transportation" />
 
@@ -39,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/inputEditText"
         android:layout_marginLeft="37dp"
-        android:layout_marginTop="53dp"
+        android:layout_marginTop="73dp"
         android:layout_toRightOf="@+id/inputTransportationButton"
         android:text="Study" />
 

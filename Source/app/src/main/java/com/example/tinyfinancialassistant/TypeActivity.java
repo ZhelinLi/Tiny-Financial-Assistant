@@ -2,7 +2,10 @@ package com.example.tinyfinancialassistant;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.HorizontalBarChart;
@@ -16,13 +19,14 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 import java.util.ArrayList;
 
 public class TypeActivity extends AppCompatActivity {
-
+    Button button_calender;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_type);
 
         HorizontalBarChart barChart = findViewById(R.id.barChart);
+        button_calender = findViewById(R.id.button_calender);
         BarDataSet barDataSet = new BarDataSet(getData(), "Report");
 
         BarData barData = new BarData(barDataSet);
@@ -45,6 +49,13 @@ public class TypeActivity extends AppCompatActivity {
         barChart.setFitBars(true);
         barChart.invalidate();
         barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
+
+        button_calender.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(TypeActivity.this, CalenderActivity.class));
+            }
+        });
     }
 
     private ArrayList getData(){

@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class InputActivity extends AppCompatActivity {
     SQLiteDatabase mDB;
-    EditText inputEditText;
+    EditText inputEditText, inputNote;
     Button inputFoodButton, inputTransportationButton, inputStudyButton, inputHousingButton,
             inputEntertainmentButton, inputShoppingButton, inputCleaningButton,
             inputPersonalCareButton, inputHobbyButton, inputOtherButton, inputAddItemButton;
@@ -27,6 +27,7 @@ public class InputActivity extends AppCompatActivity {
         mDB = dbHelper.getWritableDatabase();
 
         inputEditText = findViewById(R.id.inputEditText);
+        inputNote = findViewById(R.id.inputNote);
         inputFoodButton = findViewById(R.id.inputFoodButton);
         inputTransportationButton = findViewById(R.id.inputTransportationButton);
         inputStudyButton = findViewById(R.id.inputStudyButton);
@@ -121,7 +122,7 @@ public class InputActivity extends AppCompatActivity {
             Toast.makeText(this, "Please input value or select type", Toast.LENGTH_SHORT).show();
         }
         else {
-            String text = "testing message";
+            String text = inputNote.getText().toString();
             float amount = Float.valueOf(inputEditText.getText().toString());
             ContentValues cv = new ContentValues();
             cv.put(AllContract.AllEntry.COLUMN_TYPE, type);
