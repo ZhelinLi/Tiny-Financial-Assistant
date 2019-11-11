@@ -35,7 +35,7 @@
         android:layout_marginLeft="0dp"
         android:ems="10"
         android:hint="Enter Note"
-        android:inputType="numberDecimal" />
+        android:inputType="text" />
 
     <Button
         android:id="@+id/inputFoodButton"
@@ -131,10 +131,10 @@
 
     <Button
         android:id="@+id/inputAddItemButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
         android:layout_below="@+id/inputCleaningButton"
-        android:layout_marginLeft="200dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="173dp"
         android:text="add item" />
 </RelativeLayout>
