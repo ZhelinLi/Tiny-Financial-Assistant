@@ -15,18 +15,19 @@ import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
 public class TypeActivity extends AppCompatActivity {
-    Button button_calender;
+    FloatingActionButton button_calender;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_type);
 
         HorizontalBarChart barChart = findViewById(R.id.barChart);
-        button_calender = findViewById(R.id.button_calender);
+        button_calender = findViewById(R.id.floating);
         BarDataSet barDataSet = new BarDataSet(getData(), "Report");
 
         BarData barData = new BarData(barDataSet);

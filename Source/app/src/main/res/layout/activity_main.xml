@@ -8,18 +8,28 @@
 
     <TextView
         android:id="@+id/summary"
+        android:layout_marginTop="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="25dp"
         android:gravity="center"
-        android:textSize="48dp"
-        android:text="Summary" />
+        android:text="Today you spent:"
+        android:textSize="32dp" />
+
+    <TextView
+        android:id="@+id/money"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/summary"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:textSize="24dp"
+        android:text="$500" />
 
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/pieChart"
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:layout_below="@+id/summary" />
+        android:layout_below="@+id/money" />
 
     <LinearLayout
         android:layout_width="match_parent"
