@@ -39,16 +39,20 @@
 
     <Button
         android:id="@+id/inputFoodButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:onClick="setTypeFood"
+        android:background="@drawable/custom_button"
         android:layout_below="@+id/inputEditText"
         android:layout_marginTop="71dp"
         android:text="Food" />
 
     <Button
         android:id="@+id/inputTransportationButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:onClick="setTypeTransportation"
+        android:background="@drawable/custom_button"
         android:layout_below="@+id/inputEditText"
         android:layout_marginLeft="44dp"
         android:layout_marginTop="73dp"
@@ -57,8 +61,10 @@
 
     <Button
         android:id="@+id/inputStudyButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:onClick="setTypeStudy"
+        android:background="@drawable/custom_button"
         android:layout_below="@+id/inputEditText"
         android:layout_marginLeft="37dp"
         android:layout_marginTop="73dp"
@@ -67,16 +73,20 @@
 
     <Button
         android:id="@+id/inputHousingButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:onClick="setTypeHousing"
+        android:background="@drawable/custom_button"
         android:layout_below="@+id/inputFoodButton"
         android:layout_marginTop="60dp"
         android:text="Housing" />
 
     <Button
         android:id="@+id/inputEntertainmentButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:onClick="setTypeEntertainment"
+        android:background="@drawable/custom_button"
         android:layout_below="@+id/inputTransportationButton"
         android:layout_marginLeft="45dp"
         android:layout_marginTop="60dp"
@@ -85,8 +95,10 @@
 
     <Button
         android:id="@+id/inputShoppingButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:onClick="setTypeShopping"
+        android:background="@drawable/custom_button"
         android:layout_below="@+id/inputStudyButton"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="60dp"
@@ -95,16 +107,20 @@
 
     <Button
         android:id="@+id/inputCleaningButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:onClick="setTypeCleaning"
+        android:background="@drawable/custom_button"
         android:layout_below="@+id/inputShoppingButton"
         android:layout_marginTop="60dp"
         android:text="Cleaning" />
 
     <Button
         android:id="@+id/inputPersonalCareButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:onClick="setTypePersonalCare"
+        android:background="@drawable/custom_button"
         android:layout_below="@+id/inputEntertainmentButton"
         android:layout_marginLeft="47dp"
         android:layout_marginTop="60dp"
@@ -113,8 +129,10 @@
 
     <Button
         android:id="@+id/inputHobbyButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:onClick="setTypeHobby"
+        android:background="@drawable/custom_button"
         android:layout_below="@+id/inputShoppingButton"
         android:layout_toRightOf="@+id/inputPersonalCareButton"
         android:layout_marginLeft="35dp"
@@ -123,8 +141,10 @@
 
     <Button
         android:id="@+id/inputOtherButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:onClick="setTypeOther"
+        android:background="@drawable/custom_button"
         android:layout_below="@+id/inputCleaningButton"
         android:layout_marginTop="60dp"
         android:text="Other" />
@@ -133,7 +153,8 @@
         android:id="@+id/inputAddItemButton"
         android:textSize="30dp"
         android:layout_width="match_parent"
-        android:layout_height="73dp"
+        android:layout_height="75dp"
+        android:onClick="addItem"
         android:layout_below="@+id/inputCleaningButton"
         android:layout_marginTop="173dp"
         android:text="add item" />
