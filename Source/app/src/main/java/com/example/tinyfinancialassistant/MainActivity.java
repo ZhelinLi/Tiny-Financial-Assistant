@@ -120,4 +120,84 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onRestart() {
+        super.onRestart();
+
+        moneyText = (TextView) findViewById(R.id.money);
+
+        db = new AllDBHelper(getApplicationContext());
+        float foodCost = db.getTotalFood();
+        float transportationCost = db.getTotalTransportation();
+        float studyCost = db.getTotalStudy();
+        float housingCost = db.getTotalHousing();
+        float entertainmentCost = db.getTotalEntertainment();
+        float shoppinCost = db.getTotalShopping();
+        float cleaninCost = db.getTotalCleaning();
+        float personalCareCost = db.getTotalPersonalCare();
+        float hobbyCost = db.getTotalHobby();
+        float otherCost = db.getTotalOther();
+        float totalCost = foodCost + transportationCost + studyCost
+                + housingCost + entertainmentCost + shoppinCost
+                + cleaninCost + personalCareCost + hobbyCost + otherCost;
+        moneyText.setText("$ " + String.valueOf(totalCost));
+
+        PieChart pieChart = findViewById(R.id.pieChart);
+
+        pieChart.setUsePercentValues(false);
+        pieChart.getDescription().setEnabled(false);
+        pieChart.setExtraOffsets(5, 10, 5, 5);
+
+        pieChart.setDrawHoleEnabled(false);
+        pieChart.setHoleColor(Color.WHITE);
+        pieChart.setTransparentCircleRadius(61f);
+        pieChart.setRotationEnabled(false);
+        pieChart.getLegend().setEnabled(false);
+        pieChart.setTouchEnabled(true);
+
+        ArrayList<PieEntry> dollars = new ArrayList<>();
+        if (foodCost != 0.0) {
+            dollars.add(new PieEntry(foodCost, "Food"));
+        }
+        if (transportationCost != 0.0) {
+            dollars.add(new PieEntry(transportationCost, "Transportation"));
+        }
+        if (studyCost != 0.0) {
+            dollars.add(new PieEntry(studyCost, "Housing"));
+        }
+        if (housingCost != 0.0) {
+            dollars.add(new PieEntry(housingCost, "Study"));
+        }
+        if (entertainmentCost != 0.0) {
+            dollars.add(new PieEntry(entertainmentCost, "Clothing"));
+        }
+        if (shoppinCost != 0.0) {
+            dollars.add(new PieEntry(shoppinCost, "Personal Care"));
+        }
+        if (cleaninCost != 0.0) {
+            dollars.add(new PieEntry(cleaninCost, "Cleaning"));
+        }
+        if (personalCareCost != 0.0) {
+            dollars.add(new PieEntry(personalCareCost, "Hobbies"));
+        }
+        if (hobbyCost != 0.0) {
+            dollars.add(new PieEntry(hobbyCost, "Entertainment"));
+        }
+        if (otherCost != 0.0) {
+            dollars.add(new PieEntry(otherCost, "Other"));
+        }
+
+
+        PieDataSet dataSet = new PieDataSet(dollars, "Type");
+        dataSet.setSliceSpace(3f);
+        dataSet.setSelectionShift(5f);
+        dataSet.setColors(ColorTemplate.MATERIAL_COLORS);
+        pieChart.animateY(2000, Easing.EaseInOutCubic);
+
+        PieData data = new PieData((dataSet));
+        data.setValueTextSize(12f);
+        data.setValueTextColor(Color.YELLOW);
+        pieChart.setData(data);
+    }
+
 }
