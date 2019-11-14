@@ -108,9 +108,9 @@ public class AllDBHelper extends SQLiteOpenHelper {
         return total;
     }
 
-    public float getTotalShopping(){
+    public float getTotalClothing(){
         SQLiteDatabase db = getReadableDatabase();
-        String[] s = {"Shopping"};
+        String[] s = {"Clothping"};
         Cursor cursor = db.rawQuery("select " + AllEntry.COLUMN_PRICE + " from "+ AllEntry.TABLE_NAME +
                 " where " + AllEntry.COLUMN_TYPE +
                 " = ?", s);

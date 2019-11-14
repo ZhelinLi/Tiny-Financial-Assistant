@@ -42,7 +42,7 @@ public class TypeActivity extends AppCompatActivity {
         xAxis.setDrawAxisLine(false);
 
 
-        final String[] types = new String[]{"Food", "Transportation", "Housing", "Study", "Clothing", "Personal Care", "Cleaning", "Hobbies", "Entertainment", "Other"};
+        final String[] types = new String[]{"Food", "Transportation", "Study", "Housing", "Entertainment", "Clothing", "Cleaning", "PersonalCare", "Hobby", "Other"};
         IndexAxisValueFormatter formatter = new IndexAxisValueFormatter(types);
         xAxis.setValueFormatter(formatter);
         xAxis.setLabelCount(barDataSet.getEntryCount());
@@ -69,8 +69,8 @@ public class TypeActivity extends AppCompatActivity {
         float studyCost = db.getTotalStudy();
         float housingCost = db.getTotalHousing();
         float entertainmentCost = db.getTotalEntertainment();
-        float shoppinCost = db.getTotalShopping();
-        float cleaninCost = db.getTotalCleaning();
+        float clothingCost = db.getTotalClothing();
+        float cleaningCost = db.getTotalCleaning();
         float personalCareCost = db.getTotalPersonalCare();
         float hobbyCost = db.getTotalHobby();
         float otherCost = db.getTotalOther();
@@ -81,8 +81,8 @@ public class TypeActivity extends AppCompatActivity {
         entries.add(new BarEntry(2f, studyCost));
         entries.add(new BarEntry(3f, housingCost));
         entries.add(new BarEntry(4f, entertainmentCost));
-        entries.add(new BarEntry(5f, shoppinCost));
-        entries.add(new BarEntry(6f, cleaninCost));
+        entries.add(new BarEntry(5f, clothingCost));
+        entries.add(new BarEntry(6f, cleaningCost));
         entries.add(new BarEntry(7f, personalCareCost));
         entries.add(new BarEntry(8f, hobbyCost));
         entries.add(new BarEntry(9f, otherCost));

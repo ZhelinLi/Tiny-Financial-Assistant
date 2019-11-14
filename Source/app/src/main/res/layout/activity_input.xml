@@ -94,16 +94,16 @@
         android:text="Entertainment" />
 
     <Button
-        android:id="@+id/inputShoppingButton"
+        android:id="@+id/inputClothpingButton"
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:onClick="setTypeShopping"
+        android:onClick="setTypeClothping"
         android:background="@drawable/custom_button"
         android:layout_below="@+id/inputStudyButton"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="60dp"
         android:layout_toRightOf="@+id/inputEntertainmentButton"
-        android:text="Shopping" />
+        android:text="Clothping" />
 
     <Button
         android:id="@+id/inputCleaningButton"
@@ -111,7 +111,7 @@
         android:layout_height="75dp"
         android:onClick="setTypeCleaning"
         android:background="@drawable/custom_button"
-        android:layout_below="@+id/inputShoppingButton"
+        android:layout_below="@+id/inputClothpingButton"
         android:layout_marginTop="60dp"
         android:text="Cleaning" />
 
@@ -133,7 +133,7 @@
         android:layout_height="75dp"
         android:onClick="setTypeHobby"
         android:background="@drawable/custom_button"
-        android:layout_below="@+id/inputShoppingButton"
+        android:layout_below="@+id/inputClothpingButton"
         android:layout_toRightOf="@+id/inputPersonalCareButton"
         android:layout_marginLeft="35dp"
         android:layout_marginTop="60dp"

@@ -15,7 +15,7 @@ public class InputActivity extends AppCompatActivity {
     SQLiteDatabase mDB;
     EditText inputEditText, inputNote;
     Button inputFoodButton, inputTransportationButton, inputStudyButton, inputHousingButton,
-            inputEntertainmentButton, inputShoppingButton, inputCleaningButton,
+            inputEntertainmentButton, inputClothpingButton, inputCleaningButton,
             inputPersonalCareButton, inputHobbyButton, inputOtherButton, inputAddItemButton;
     String type = "";
 
@@ -33,7 +33,7 @@ public class InputActivity extends AppCompatActivity {
         inputStudyButton = findViewById(R.id.inputStudyButton);
         inputHousingButton = findViewById(R.id.inputHousingButton);
         inputEntertainmentButton = findViewById(R.id.inputEntertainmentButton);
-        inputShoppingButton = findViewById(R.id.inputShoppingButton);
+        inputClothpingButton = findViewById(R.id.inputClothpingButton);
         inputCleaningButton = findViewById(R.id.inputCleaningButton);
         inputPersonalCareButton = findViewById(R.id.inputPersonalCareButton);
         inputHobbyButton = findViewById(R.id.inputHobbyButton);
@@ -69,10 +69,10 @@ public class InputActivity extends AppCompatActivity {
                 setTypeEntertainment();
             }
         });
-        inputShoppingButton.setOnClickListener(new View.OnClickListener() {
+        inputClothpingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setTypeShopping();
+                setTypeClothping();
             }
         });
         inputCleaningButton.setOnClickListener(new View.OnClickListener() {
@@ -126,9 +126,9 @@ public class InputActivity extends AppCompatActivity {
         type = "Entertainment";
         Toast.makeText(getApplicationContext(), "Entertainment", Toast.LENGTH_SHORT).show();
     }
-    private void setTypeShopping() {
-        type = "Shopping";
-        Toast.makeText(getApplicationContext(), "Shopping", Toast.LENGTH_SHORT).show();
+    private void setTypeClothping() {
+        type = "Clothping";
+        Toast.makeText(getApplicationContext(), "Clothping", Toast.LENGTH_SHORT).show();
     }
     private void setTypeCleaning() {
         type = "Cleaning";
