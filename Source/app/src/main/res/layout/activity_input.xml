@@ -42,120 +42,118 @@
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:onClick="setTypeFood"
-        android:background="@drawable/custom_button"
+        android:background="@drawable/food_button"
         android:layout_below="@+id/inputEditText"
-        android:layout_marginTop="71dp"
-        android:text="Food" />
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="72dp" />
 
     <Button
         android:id="@+id/inputTransportationButton"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:onClick="setTypeTransportation"
-        android:background="@drawable/custom_button"
+        android:background="@drawable/transport_button"
         android:layout_below="@+id/inputEditText"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="73dp"
-        android:layout_toRightOf="@+id/inputFoodButton"
-        android:text="Transportation" />
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="72dp"
+        android:layout_toRightOf="@+id/inputFoodButton" />
 
     <Button
         android:id="@+id/inputStudyButton"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:onClick="setTypeStudy"
-        android:background="@drawable/custom_button"
+        android:background="@drawable/study_button"
         android:layout_below="@+id/inputEditText"
-        android:layout_marginLeft="37dp"
-        android:layout_marginTop="73dp"
-        android:layout_toRightOf="@+id/inputTransportationButton"
-        android:text="Study" />
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="72dp"
+        android:layout_toRightOf="@+id/inputTransportationButton" />
 
     <Button
         android:id="@+id/inputHousingButton"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:onClick="setTypeHousing"
-        android:background="@drawable/custom_button"
+        android:background="@drawable/housing_button"
         android:layout_below="@+id/inputFoodButton"
-        android:layout_marginTop="60dp"
-        android:text="Housing" />
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp" />
 
     <Button
         android:id="@+id/inputEntertainmentButton"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:onClick="setTypeEntertainment"
-        android:background="@drawable/custom_button"
+        android:background="@drawable/entertainment_button"
         android:layout_below="@+id/inputTransportationButton"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="60dp"
-        android:layout_toRightOf="@+id/inputHousingButton"
-        android:text="Entertainment" />
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@+id/inputHousingButton" />
 
     <Button
         android:id="@+id/inputShoppingButton"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:onClick="setTypeShopping"
-        android:background="@drawable/custom_button"
+        android:background="@drawable/clothing_button"
         android:layout_below="@+id/inputStudyButton"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="60dp"
-        android:layout_toRightOf="@+id/inputEntertainmentButton"
-        android:text="Shopping" />
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@+id/inputEntertainmentButton" />
 
     <Button
         android:id="@+id/inputCleaningButton"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:onClick="setTypeCleaning"
-        android:background="@drawable/custom_button"
+        android:background="@drawable/cleaning_button"
         android:layout_below="@+id/inputShoppingButton"
-        android:layout_marginTop="60dp"
-        android:text="Cleaning" />
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp" />
 
     <Button
         android:id="@+id/inputPersonalCareButton"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:onClick="setTypePersonalCare"
-        android:background="@drawable/custom_button"
+        android:background="@drawable/care_button"
         android:layout_below="@+id/inputEntertainmentButton"
-        android:layout_marginLeft="47dp"
-        android:layout_marginTop="60dp"
-        android:layout_toRightOf="@+id/inputCleaningButton"
-        android:text="Personal Care" />
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@+id/inputCleaningButton" />
 
     <Button
         android:id="@+id/inputHobbyButton"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:onClick="setTypeHobby"
-        android:background="@drawable/custom_button"
+        android:background="@drawable/hobby_button"
         android:layout_below="@+id/inputShoppingButton"
         android:layout_toRightOf="@+id/inputPersonalCareButton"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="60dp"
-        android:text="Hobby" />
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="50dp" />
 
     <Button
         android:id="@+id/inputOtherButton"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:onClick="setTypeOther"
-        android:background="@drawable/custom_button"
         android:layout_below="@+id/inputCleaningButton"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#FFFFFF"
+        android:textSize="15dp"
         android:text="Other" />
 
     <Button
         android:id="@+id/inputAddItemButton"
         android:textSize="30dp"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
         android:onClick="addItem"
         android:layout_below="@+id/inputCleaningButton"
-        android:layout_marginTop="173dp"
+        android:gravity="center"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="165dp"
         android:text="add item" />
 </RelativeLayout>
