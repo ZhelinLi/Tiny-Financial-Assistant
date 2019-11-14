@@ -21,6 +21,8 @@ import java.util.ArrayList;
 
 public class TypeActivity extends AppCompatActivity {
     FloatingActionButton button_calender;
+    AllDBHelper db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +30,7 @@ public class TypeActivity extends AppCompatActivity {
 
         HorizontalBarChart barChart = findViewById(R.id.barChart);
         button_calender = findViewById(R.id.floating);
+
         BarDataSet barDataSet = new BarDataSet(getData(), "Report");
 
         BarData barData = new BarData(barDataSet);
@@ -60,17 +63,30 @@ public class TypeActivity extends AppCompatActivity {
     }
 
     private ArrayList getData(){
+        db = new AllDBHelper(getApplicationContext());
+        float foodCost = db.getTotalFood();
+        float transportationCost = db.getTotalTransportation();
+        float studyCost = db.getTotalStudy();
+        float housingCost = db.getTotalHousing();
+        float entertainmentCost = db.getTotalEntertainment();
+        float shoppinCost = db.getTotalShopping();
+        float cleaninCost = db.getTotalCleaning();
+        float personalCareCost = db.getTotalPersonalCare();
+        float hobbyCost = db.getTotalHobby();
+        float otherCost = db.getTotalOther();
+
         ArrayList<BarEntry> entries = new ArrayList<>();
-        entries.add(new BarEntry(0f, 350f));
-        entries.add(new BarEntry(1f, 200f));
-        entries.add(new BarEntry(2f, 900f));
-        entries.add(new BarEntry(3f, 1240f));
-        entries.add(new BarEntry(4f, 436f));
-        entries.add(new BarEntry(5f, 248f));
-        entries.add(new BarEntry(6f, 56f));
-        entries.add(new BarEntry(7f, 64f));
-        entries.add(new BarEntry(8f, 278f));
-        entries.add(new BarEntry(9f, 156f));
+        entries.add(new BarEntry(0f, foodCost));
+        entries.add(new BarEntry(1f, transportationCost));
+        entries.add(new BarEntry(2f, studyCost));
+        entries.add(new BarEntry(3f, housingCost));
+        entries.add(new BarEntry(4f, entertainmentCost));
+        entries.add(new BarEntry(5f, shoppinCost));
+        entries.add(new BarEntry(6f, cleaninCost));
+        entries.add(new BarEntry(7f, personalCareCost));
+        entries.add(new BarEntry(8f, hobbyCost));
+        entries.add(new BarEntry(9f, otherCost));
+
         return entries;
     }
 }

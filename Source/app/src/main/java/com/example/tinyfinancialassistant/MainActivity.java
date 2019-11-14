@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
@@ -19,6 +20,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     Button inputButton, typeButton;
+    TextView moneyText;
+    AllDBHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,23 @@ public class MainActivity extends AppCompatActivity {
 
         inputButton = findViewById(R.id.inputButton);
         typeButton = findViewById(R.id.typeButton);
+        moneyText = (TextView) findViewById(R.id.money);
+
+        db = new AllDBHelper(getApplicationContext());
+        float foodCost = db.getTotalFood();
+        float transportationCost = db.getTotalTransportation();
+        float studyCost = db.getTotalStudy();
+        float housingCost = db.getTotalHousing();
+        float entertainmentCost = db.getTotalEntertainment();
+        float shoppinCost = db.getTotalShopping();
+        float cleaninCost = db.getTotalCleaning();
+        float personalCareCost = db.getTotalPersonalCare();
+        float hobbyCost = db.getTotalHobby();
+        float otherCost = db.getTotalOther();
+        float totalCost = foodCost + transportationCost + studyCost
+                + housingCost + entertainmentCost + shoppinCost
+                + cleaninCost + personalCareCost + hobbyCost + otherCost;
+        moneyText.setText("$ " + String.valueOf(totalCost));
 
         PieChart pieChart = findViewById(R.id.pieChart);
 
@@ -42,16 +62,37 @@ public class MainActivity extends AppCompatActivity {
         pieChart.setTouchEnabled(true);
 
         ArrayList<PieEntry> dollars = new ArrayList<>();
-        dollars.add(new PieEntry(350f, "Food"));
-        dollars.add(new PieEntry(200f, "Transportation"));
-        dollars.add(new PieEntry(900f, "Housing"));
-        dollars.add(new PieEntry(1240f, "Study"));
-        dollars.add(new PieEntry(436f, "Clothing"));
-        dollars.add(new PieEntry(248f, "Personal Care"));
-        dollars.add(new PieEntry(56f, "Cleaning"));
-        dollars.add(new PieEntry(64f, "Hobbies"));
-        dollars.add(new PieEntry(278f, "Entertainment"));
-        dollars.add(new PieEntry(156f, "Other"));
+        if (foodCost != 0.0) {
+            dollars.add(new PieEntry(foodCost, "Food"));
+        }
+        if (transportationCost != 0.0) {
+            dollars.add(new PieEntry(transportationCost, "Transportation"));
+        }
+        if (studyCost != 0.0) {
+            dollars.add(new PieEntry(studyCost, "Housing"));
+        }
+        if (housingCost != 0.0) {
+            dollars.add(new PieEntry(housingCost, "Study"));
+        }
+        if (entertainmentCost != 0.0) {
+            dollars.add(new PieEntry(entertainmentCost, "Clothing"));
+        }
+        if (shoppinCost != 0.0) {
+            dollars.add(new PieEntry(shoppinCost, "Personal Care"));
+        }
+        if (cleaninCost != 0.0) {
+            dollars.add(new PieEntry(cleaninCost, "Cleaning"));
+        }
+        if (personalCareCost != 0.0) {
+            dollars.add(new PieEntry(personalCareCost, "Hobbies"));
+        }
+        if (hobbyCost != 0.0) {
+            dollars.add(new PieEntry(hobbyCost, "Entertainment"));
+        }
+        if (otherCost != 0.0) {
+            dollars.add(new PieEntry(otherCost, "Other"));
+        }
+
 
         PieDataSet dataSet = new PieDataSet(dollars, "Type");
         dataSet.setSliceSpace(3f);
