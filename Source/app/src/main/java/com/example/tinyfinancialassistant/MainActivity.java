@@ -38,14 +38,14 @@ public class MainActivity extends AppCompatActivity {
         float studyCost = db.getTotalStudy();
         float housingCost = db.getTotalHousing();
         float entertainmentCost = db.getTotalEntertainment();
-        float shoppinCost = db.getTotalShopping();
-        float cleaninCost = db.getTotalCleaning();
+        float clothingCost = db.getTotalClothing();
+        float cleaningCost = db.getTotalCleaning();
         float personalCareCost = db.getTotalPersonalCare();
         float hobbyCost = db.getTotalHobby();
         float otherCost = db.getTotalOther();
         float totalCost = foodCost + transportationCost + studyCost
-                + housingCost + entertainmentCost + shoppinCost
-                + cleaninCost + personalCareCost + hobbyCost + otherCost;
+                + housingCost + entertainmentCost + clothingCost
+                + cleaningCost + personalCareCost + hobbyCost + otherCost;
         moneyText.setText("$ " + String.valueOf(totalCost));
 
         PieChart pieChart = findViewById(R.id.pieChart);
@@ -69,25 +69,25 @@ public class MainActivity extends AppCompatActivity {
             dollars.add(new PieEntry(transportationCost, "Transportation"));
         }
         if (studyCost != 0.0) {
-            dollars.add(new PieEntry(studyCost, "Housing"));
+            dollars.add(new PieEntry(studyCost, "Study"));
         }
         if (housingCost != 0.0) {
-            dollars.add(new PieEntry(housingCost, "Study"));
+            dollars.add(new PieEntry(housingCost, "Housing"));
         }
         if (entertainmentCost != 0.0) {
-            dollars.add(new PieEntry(entertainmentCost, "Clothing"));
+            dollars.add(new PieEntry(entertainmentCost, "Entertainment"));
         }
-        if (shoppinCost != 0.0) {
-            dollars.add(new PieEntry(shoppinCost, "Personal Care"));
+        if (clothingCost != 0.0) {
+            dollars.add(new PieEntry(clothingCost, "Clothing"));
         }
-        if (cleaninCost != 0.0) {
-            dollars.add(new PieEntry(cleaninCost, "Cleaning"));
+        if (cleaningCost != 0.0) {
+            dollars.add(new PieEntry(cleaningCost, "Cleaning"));
         }
         if (personalCareCost != 0.0) {
-            dollars.add(new PieEntry(personalCareCost, "Hobbies"));
+            dollars.add(new PieEntry(personalCareCost, "Personal Care"));
         }
         if (hobbyCost != 0.0) {
-            dollars.add(new PieEntry(hobbyCost, "Entertainment"));
+            dollars.add(new PieEntry(hobbyCost, "Hobbies"));
         }
         if (otherCost != 0.0) {
             dollars.add(new PieEntry(otherCost, "Other"));
@@ -132,14 +132,14 @@ public class MainActivity extends AppCompatActivity {
         float studyCost = db.getTotalStudy();
         float housingCost = db.getTotalHousing();
         float entertainmentCost = db.getTotalEntertainment();
-        float shoppinCost = db.getTotalShopping();
-        float cleaninCost = db.getTotalCleaning();
+        float clothingCost = db.getTotalClothing();
+        float cleaningCost = db.getTotalCleaning();
         float personalCareCost = db.getTotalPersonalCare();
         float hobbyCost = db.getTotalHobby();
         float otherCost = db.getTotalOther();
         float totalCost = foodCost + transportationCost + studyCost
-                + housingCost + entertainmentCost + shoppinCost
-                + cleaninCost + personalCareCost + hobbyCost + otherCost;
+                + housingCost + entertainmentCost + clothingCost
+                + cleaningCost + personalCareCost + hobbyCost + otherCost;
         moneyText.setText("$ " + String.valueOf(totalCost));
 
         PieChart pieChart = findViewById(R.id.pieChart);
@@ -163,25 +163,25 @@ public class MainActivity extends AppCompatActivity {
             dollars.add(new PieEntry(transportationCost, "Transportation"));
         }
         if (studyCost != 0.0) {
-            dollars.add(new PieEntry(studyCost, "Housing"));
+            dollars.add(new PieEntry(studyCost, "Study"));
         }
         if (housingCost != 0.0) {
-            dollars.add(new PieEntry(housingCost, "Study"));
+            dollars.add(new PieEntry(housingCost, "Housing"));
         }
         if (entertainmentCost != 0.0) {
-            dollars.add(new PieEntry(entertainmentCost, "Clothing"));
+            dollars.add(new PieEntry(entertainmentCost, "Entertainment"));
         }
-        if (shoppinCost != 0.0) {
-            dollars.add(new PieEntry(shoppinCost, "Personal Care"));
+        if (clothingCost != 0.0) {
+            dollars.add(new PieEntry(clothingCost, "Clothing"));
         }
-        if (cleaninCost != 0.0) {
-            dollars.add(new PieEntry(cleaninCost, "Cleaning"));
+        if (cleaningCost != 0.0) {
+            dollars.add(new PieEntry(cleaningCost, "Cleaning"));
         }
         if (personalCareCost != 0.0) {
-            dollars.add(new PieEntry(personalCareCost, "Hobbies"));
+            dollars.add(new PieEntry(personalCareCost, "Personal Care"));
         }
         if (hobbyCost != 0.0) {
-            dollars.add(new PieEntry(hobbyCost, "Entertainment"));
+            dollars.add(new PieEntry(hobbyCost, "Hobbies"));
         }
         if (otherCost != 0.0) {
             dollars.add(new PieEntry(otherCost, "Other"));
