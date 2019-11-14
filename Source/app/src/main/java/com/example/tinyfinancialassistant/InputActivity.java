@@ -106,17 +106,46 @@ public class InputActivity extends AppCompatActivity {
             }
         });
     }
-
-    private void setTypeFood() {type = "Food";}
-    private void setTypeTransportation() {type = "Transportation";}
-    private void setTypeStudy() {type = "Study";}
-    private void setTypeHousing() {type = "Housing";}
-    private void setTypeEntertainment() {type = "Entertainment";}
-    private void setTypeShopping() {type = "Shopping";}
-    private void setTypeCleaning() {type = "Cleaning";}
-    private void setTypePersonalCare() {type = "PersonalCare";}
-    private void setTypeHobby() {type = "Hobby";}
-    private void setTypeOther() {type = "Other";}
+    private void setTypeFood() {
+        type = "Food";
+        Toast.makeText(getApplicationContext(), "Food", Toast.LENGTH_SHORT).show();
+    }
+    private void setTypeTransportation() {
+        type = "Transportation";
+        Toast.makeText(getApplicationContext(), "Transportation", Toast.LENGTH_SHORT).show();
+    }
+    private void setTypeStudy() {
+        type = "Study";
+        Toast.makeText(getApplicationContext(), "Study", Toast.LENGTH_SHORT).show();
+    }
+    private void setTypeHousing() {
+        type = "Housing";
+        Toast.makeText(getApplicationContext(), "Housing", Toast.LENGTH_SHORT).show();
+    }
+    private void setTypeEntertainment() {
+        type = "Entertainment";
+        Toast.makeText(getApplicationContext(), "Entertainment", Toast.LENGTH_SHORT).show();
+    }
+    private void setTypeShopping() {
+        type = "Shopping";
+        Toast.makeText(getApplicationContext(), "Shopping", Toast.LENGTH_SHORT).show();
+    }
+    private void setTypeCleaning() {
+        type = "Cleaning";
+        Toast.makeText(getApplicationContext(), "Cleaning", Toast.LENGTH_SHORT).show();
+    }
+    private void setTypePersonalCare() {
+        type = "PersonalCare";
+        Toast.makeText(getApplicationContext(), "Personal Care", Toast.LENGTH_SHORT).show();
+    }
+    private void setTypeHobby() {
+        type = "Hobby";
+        Toast.makeText(getApplicationContext(), "Hobby", Toast.LENGTH_SHORT).show();
+    }
+    private void setTypeOther() {
+        type = "Other";
+        Toast.makeText(getApplicationContext(), "Other", Toast.LENGTH_SHORT).show();
+    }
     private void addItem() {
         if (inputEditText.getText().toString().trim().length() == 0 || type == "" || type == null) {
             Toast.makeText(this, "Please input value or select type", Toast.LENGTH_SHORT).show();
