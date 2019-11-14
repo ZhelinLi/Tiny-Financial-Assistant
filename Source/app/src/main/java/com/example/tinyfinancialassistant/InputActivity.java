@@ -33,7 +33,7 @@ public class InputActivity extends AppCompatActivity {
         inputStudyButton = findViewById(R.id.inputStudyButton);
         inputHousingButton = findViewById(R.id.inputHousingButton);
         inputEntertainmentButton = findViewById(R.id.inputEntertainmentButton);
-        inputClothpingButton = findViewById(R.id.inputClothpingButton);
+        inputClothpingButton = findViewById(R.id.inputClothingButton);
         inputCleaningButton = findViewById(R.id.inputCleaningButton);
         inputPersonalCareButton = findViewById(R.id.inputPersonalCareButton);
         inputHobbyButton = findViewById(R.id.inputHobbyButton);
@@ -72,7 +72,7 @@ public class InputActivity extends AppCompatActivity {
         inputClothpingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setTypeClothping();
+                setTypeClothing();
             }
         });
         inputCleaningButton.setOnClickListener(new View.OnClickListener() {
@@ -126,9 +126,9 @@ public class InputActivity extends AppCompatActivity {
         type = "Entertainment";
         Toast.makeText(getApplicationContext(), "Entertainment", Toast.LENGTH_SHORT).show();
     }
-    private void setTypeClothping() {
-        type = "Clothping";
-        Toast.makeText(getApplicationContext(), "Clothping", Toast.LENGTH_SHORT).show();
+    private void setTypeClothing() {
+        type = "Clothing";
+        Toast.makeText(getApplicationContext(), "Clothing", Toast.LENGTH_SHORT).show();
     }
     private void setTypeCleaning() {
         type = "Cleaning";
