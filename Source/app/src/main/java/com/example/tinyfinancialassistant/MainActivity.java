@@ -19,7 +19,7 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    Button inputButton, typeButton;
+    Button inputButton, typeButton, listButton;
     TextView moneyText;
     AllDBHelper db;
 
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         inputButton = findViewById(R.id.inputButton);
         typeButton = findViewById(R.id.typeButton);
+        listButton = findViewById(R.id.listButton);
         moneyText = (TextView) findViewById(R.id.money);
 
         db = new AllDBHelper(getApplicationContext());
@@ -116,6 +117,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, TypeActivity.class));
+            }
+        });
+        listButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ListActivity.class));
             }
         });
     }

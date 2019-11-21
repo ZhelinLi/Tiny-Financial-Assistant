@@ -10,6 +10,9 @@ import com.example.tinyfinancialassistant.AllContract.*;
 
 import androidx.annotation.Nullable;
 
+import java.sql.Timestamp;
+import java.util.ArrayList;
+
 public class AllDBHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "allList.db";
     public static final int DATABASE_VERSION = 1;
@@ -37,6 +40,48 @@ public class AllDBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    public ArrayList<DataObject> getAllData() {
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from "+ AllEntry.TABLE_NAME +";",null);
+        ArrayList<DataObject> objectList = new ArrayList<>();
+        while(cursor.moveToNext()) {
+
+            String type = cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_TYPE));
+            float cost = Float.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_PRICE)));
+            Timestamp time = Timestamp.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_TIMESTAMP)));
+            String note = cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_NOTE));
+            DataObject obj = new DataObject(type, cost, time, note);
+            objectList.add(obj);
+        }
+        return objectList;
+    }
+
+    public ArrayList<DataObject> searchTitle(String s) {
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from "+ AllEntry.TABLE_NAME +
+                " where " + AllEntry.COLUMN_NOTE +
+                " like '%" + s + "%';", null);
+        ArrayList<DataObject> objectList = new ArrayList<>();
+        while(cursor.moveToNext()) {
+
+            String type = cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_TYPE));
+            float cost = Float.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_PRICE)));
+            Timestamp time = Timestamp.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_TIMESTAMP)));
+            String note = cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_NOTE));
+            DataObject obj = new DataObject(type, cost, time, note);
+            objectList.add(obj);
+        }
+        return objectList;
+    }
+
+    public void delete(String s) {
+        SQLiteDatabase db = getWritableDatabase();
+        db.delete(
+                AllEntry.TABLE_NAME,  // Where to delete
+                AllEntry._ID + " = ?",
+                new String[]{s});  // What to delete
+        db.close();
+    }
 
     public float getTotalFood() {
         SQLiteDatabase db = getReadableDatabase();

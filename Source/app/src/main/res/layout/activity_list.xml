@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/avc_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ListActivity">
+
+    <LinearLayout
+        android:id="@+id/listHead"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:weightSum="100">
+
+        <TextView
+            android:id="@+id/type_head"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="type"
+            android:layout_weight="20" />
+
+        <TextView
+            android:id="@+id/detail_head"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="data"
+            android:layout_weight="60" />
+
+        <TextView
+            android:id="@+id/cost_head"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="cost"
+            android:layout_weight="20" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/data_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/listHead" />
+</LinearLayout>

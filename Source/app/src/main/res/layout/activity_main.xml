@@ -38,17 +38,24 @@
 
         <Button
             android:id="@+id/inputButton"
-            android:layout_marginLeft="75dp"
+            android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="input" />
 
         <Button
             android:id="@+id/typeButton"
-            android:layout_marginLeft="75dp"
+            android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="type" />
+
+        <Button
+            android:id="@+id/listButton"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="list" />
 
     </LinearLayout>
 

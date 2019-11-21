@@ -7,11 +7,13 @@ public class DataObject implements Serializable {
     private String type;
     private float cost;
     private Timestamp time;
+    private String note;
 
-    public DataObject(String type, float cost, Timestamp time) {
+    public DataObject(String type, float cost, Timestamp time, String note) {
         this.type = type;
         this.cost = cost;
         this.time = time;
+        this.note = note;
     }
 
     public String getType() {
@@ -36,5 +38,13 @@ public class DataObject implements Serializable {
 
     public void setTime(Timestamp time) {
         this.time = time;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
     }
 }
