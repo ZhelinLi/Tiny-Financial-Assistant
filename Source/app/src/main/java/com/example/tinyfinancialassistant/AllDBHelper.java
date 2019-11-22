@@ -56,11 +56,11 @@ public class AllDBHelper extends SQLiteOpenHelper {
         return objectList;
     }
 
-    public ArrayList<DataObject> searchTitle(String s) {
+    public ArrayList<DataObject> searchNote(String s) {
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery("select * from "+ AllEntry.TABLE_NAME +
                 " where " + AllEntry.COLUMN_NOTE +
-                " like '%" + s + "%';", null);
+                " like '" + s + "%';", null);
         ArrayList<DataObject> objectList = new ArrayList<>();
         while(cursor.moveToNext()) {
 
@@ -155,7 +155,7 @@ public class AllDBHelper extends SQLiteOpenHelper {
 
     public float getTotalClothing(){
         SQLiteDatabase db = getReadableDatabase();
-        String[] s = {"Clothping"};
+        String[] s = {"Clothing"};
         Cursor cursor = db.rawQuery("select " + AllEntry.COLUMN_PRICE + " from "+ AllEntry.TABLE_NAME +
                 " where " + AllEntry.COLUMN_TYPE +
                 " = ?", s);

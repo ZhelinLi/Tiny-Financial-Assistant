@@ -2,16 +2,20 @@ package com.example.tinyfinancialassistant;
 
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import java.io.InputStream;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -21,8 +25,10 @@ public class ListAdapter extends ArrayAdapter<DataObject> {
 
     private ArrayList<DataObject> dataList = new ArrayList<>();
     private Context mContext;
-    TextView typeView, noteView, timeView, costView;
+    TextView noteView, timeView, costView;
+    ImageView typeView;
     AllDBHelper db;
+    Bitmap bm;
 
     public ListAdapter(Context context, ArrayList<DataObject> list) {
         super(context, 0, list);
@@ -38,17 +44,50 @@ public class ListAdapter extends ArrayAdapter<DataObject> {
             listItem = LayoutInflater.from(mContext).inflate(R.layout.list_adapter,parent,false);
 
         final DataObject currentData = dataList.get(position);
-
-        typeView = (TextView) listItem.findViewById(R.id.typeView);
+        switch(currentData.getType()) {
+            case "Food":
+                bm = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.food);
+                break;
+            case "Transportation":
+                bm = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.transportation);
+                break;
+            case "Study":
+                bm = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.study);
+                break;
+            case "Housing":
+                bm = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.housing);
+                break;
+            case "Entertainment":
+                bm = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.entertainment);
+                break;
+            case "Clothing":
+                bm = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.clothing);
+                break;
+            case "Cleaning":
+                bm = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.cleaning);
+                break;
+            case "PersonalCare":
+                bm = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.care);
+                break;
+            case "Hobby":
+                bm = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.hobby);
+                break;
+            case "Other":
+                bm = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.hobby);
+                break;
+        }
+        typeView = (ImageView) listItem.findViewById(R.id.typeView);
         noteView = (TextView) listItem.findViewById(R.id.noteView);
         timeView = (TextView) listItem.findViewById(R.id.timeView);
         costView = (TextView) listItem.findViewById(R.id.costView);
 
-        typeView.setText(currentData.getType());
+        typeView.setImageBitmap(bm);
         noteView.setText(currentData.getNote());
         Timestamp stamp = currentData.getTime();
+        //Date d = new Date(stamp.getTime());
+        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
         Date date = new Date(stamp.getTime());
-        timeView.setText(date.toString());
+        timeView.setText(sdf.format(date));//date.toString());
         costView.setText(String.valueOf(currentData.getCost()));
 
         return listItem;
