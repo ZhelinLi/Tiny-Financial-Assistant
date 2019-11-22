@@ -25,7 +25,7 @@ public class AllDBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         final String SQL_CREATE_ALLLIST_TABLE = "CREATE TABLE " +
                 AllEntry.TABLE_NAME + " (" +
-                AllEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                AllEntry.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 AllEntry.COLUMN_TYPE + " TEXT NOT NULL, " +
                 AllEntry.COLUMN_PRICE + " INTEGER NOT NULL, " +
                 AllEntry.COLUMN_NOTE + " TEXT, " +
@@ -45,12 +45,12 @@ public class AllDBHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("select * from "+ AllEntry.TABLE_NAME +";",null);
         ArrayList<DataObject> objectList = new ArrayList<>();
         while(cursor.moveToNext()) {
-
+            int id = Integer.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_ID)));
             String type = cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_TYPE));
             float cost = Float.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_PRICE)));
             Timestamp time = Timestamp.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_TIMESTAMP)));
             String note = cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_NOTE));
-            DataObject obj = new DataObject(type, cost, time, note);
+            DataObject obj = new DataObject(id, type, cost, time, note);
             objectList.add(obj);
         }
         return objectList;
@@ -63,23 +63,23 @@ public class AllDBHelper extends SQLiteOpenHelper {
                 " like '" + s + "%';", null);
         ArrayList<DataObject> objectList = new ArrayList<>();
         while(cursor.moveToNext()) {
-
+            int id = Integer.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_ID)));
             String type = cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_TYPE));
             float cost = Float.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_PRICE)));
             Timestamp time = Timestamp.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_TIMESTAMP)));
             String note = cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_NOTE));
-            DataObject obj = new DataObject(type, cost, time, note);
+            DataObject obj = new DataObject(id, type, cost, time, note);
             objectList.add(obj);
         }
         return objectList;
     }
 
-    public void delete(String s) {
+    public void delete(int id) {
         SQLiteDatabase db = getWritableDatabase();
         db.delete(
                 AllEntry.TABLE_NAME,  // Where to delete
-                AllEntry._ID + " = ?",
-                new String[]{s});  // What to delete
+                AllEntry.COLUMN_ID + " = ?",
+                new String[]{String.valueOf(id)});  // What to delete
         db.close();
     }
 

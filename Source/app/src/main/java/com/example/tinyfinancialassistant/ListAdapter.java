@@ -89,8 +89,10 @@ public class ListAdapter extends ArrayAdapter<DataObject> {
         Date date = new Date(stamp.getTime());
         timeView.setText(sdf.format(date));//date.toString());
         costView.setText(String.valueOf(currentData.getCost()));
-
         return listItem;
     }
 
+    public DataObject getDataAt(int position) {
+        return dataList.get(position);
+    }
 }

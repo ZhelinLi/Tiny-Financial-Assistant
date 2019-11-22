@@ -8,6 +8,7 @@ public class AllContract {
 
     public static final class AllEntry implements BaseColumns {
         public static final String TABLE_NAME = "allList";
+        public static final String COLUMN_ID = "id";
         public static final String COLUMN_TYPE = "type";
         public static final String COLUMN_PRICE = "price";
         public static final String COLUMN_NOTE = "note";
