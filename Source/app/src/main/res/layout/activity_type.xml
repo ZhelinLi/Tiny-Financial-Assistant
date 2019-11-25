@@ -14,6 +14,9 @@
         android:layout_marginTop="10dp"
         tools:layout_editor_absoluteX="0dp"></com.github.mikephil.charting.charts.HorizontalBarChart>
 
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
     <RadioButton
         android:id="@+id/dayRadioButton"
         android:layout_width="wrap_content"
@@ -33,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/barChart"
         android:text="@string/type_dis_month" />
-
+    </RadioGroup>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floating"
         android:layout_width="wrap_content"

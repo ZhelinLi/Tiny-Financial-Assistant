@@ -47,6 +47,14 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="72dp" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputFoodButton"
+        android:text="Food"
+        android:layout_marginLeft="40dp"
+        />
+
     <Button
         android:id="@+id/inputTransportationButton"
         android:layout_width="75dp"
@@ -57,6 +65,14 @@
         android:layout_marginLeft="65dp"
         android:layout_marginTop="72dp"
         android:layout_toRightOf="@+id/inputFoodButton" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputTransportationButton"
+        android:text="Transportation"
+        android:layout_marginLeft="148dp"
+        />
 
     <Button
         android:id="@+id/inputStudyButton"
@@ -69,6 +85,14 @@
         android:layout_marginTop="72dp"
         android:layout_toRightOf="@+id/inputTransportationButton" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputStudyButton"
+        android:text="Study"
+        android:layout_marginLeft="320dp"
+        />
+
     <Button
         android:id="@+id/inputHousingButton"
         android:layout_width="75dp"
@@ -78,6 +102,14 @@
         android:layout_below="@+id/inputFoodButton"
         android:layout_marginStart="20dp"
         android:layout_marginTop="50dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputHousingButton"
+        android:text="Housing"
+        android:layout_marginLeft="30dp"
+        />
 
     <Button
         android:id="@+id/inputEntertainmentButton"
@@ -90,6 +122,14 @@
         android:layout_marginTop="50dp"
         android:layout_toRightOf="@+id/inputHousingButton" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputEntertainmentButton"
+        android:text="Entertainment"
+        android:layout_marginLeft="150dp"
+        />
+
     <Button
         android:id="@+id/inputClothingButton"
         android:layout_width="75dp"
@@ -101,6 +141,14 @@
         android:layout_marginTop="50dp"
         android:layout_toRightOf="@+id/inputEntertainmentButton" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputClothingButton"
+        android:text="Clothing"
+        android:layout_marginLeft="310dp"
+        />
+
     <Button
         android:id="@+id/inputCleaningButton"
         android:layout_width="75dp"
@@ -110,6 +158,14 @@
         android:layout_below="@+id/inputClothingButton"
         android:layout_marginStart="20dp"
         android:layout_marginTop="50dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputCleaningButton"
+        android:text="Cleaning"
+        android:layout_marginLeft="25dp"
+        />
 
     <Button
         android:id="@+id/inputPersonalCareButton"
@@ -122,6 +178,14 @@
         android:layout_marginTop="50dp"
         android:layout_toRightOf="@+id/inputCleaningButton" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputPersonalCareButton"
+        android:text="PersonalCare"
+        android:layout_marginLeft="150dp"
+        />
+
     <Button
         android:id="@+id/inputHobbyButton"
         android:layout_width="75dp"
@@ -132,6 +196,14 @@
         android:layout_toRightOf="@+id/inputPersonalCareButton"
         android:layout_marginLeft="65dp"
         android:layout_marginTop="50dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputHobbyButton"
+        android:text="Hobby"
+        android:layout_marginLeft="310dp"
+        />
 
     <Button
         android:id="@+id/inputOtherButton"

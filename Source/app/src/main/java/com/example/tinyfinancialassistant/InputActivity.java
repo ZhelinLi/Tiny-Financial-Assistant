@@ -15,7 +15,7 @@ public class InputActivity extends AppCompatActivity {
     SQLiteDatabase mDB;
     EditText inputEditText, inputNote;
     Button inputFoodButton, inputTransportationButton, inputStudyButton, inputHousingButton,
-            inputEntertainmentButton, inputClothpingButton, inputCleaningButton,
+            inputEntertainmentButton, inputClothingButton, inputCleaningButton,
             inputPersonalCareButton, inputHobbyButton, inputOtherButton, inputAddItemButton;
     String type = "";
 
@@ -33,7 +33,7 @@ public class InputActivity extends AppCompatActivity {
         inputStudyButton = findViewById(R.id.inputStudyButton);
         inputHousingButton = findViewById(R.id.inputHousingButton);
         inputEntertainmentButton = findViewById(R.id.inputEntertainmentButton);
-        inputClothpingButton = findViewById(R.id.inputClothingButton);
+        inputClothingButton = findViewById(R.id.inputClothingButton);
         inputCleaningButton = findViewById(R.id.inputCleaningButton);
         inputPersonalCareButton = findViewById(R.id.inputPersonalCareButton);
         inputHobbyButton = findViewById(R.id.inputHobbyButton);
@@ -69,7 +69,7 @@ public class InputActivity extends AppCompatActivity {
                 setTypeEntertainment();
             }
         });
-        inputClothpingButton.setOnClickListener(new View.OnClickListener() {
+        inputClothingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 setTypeClothing();
