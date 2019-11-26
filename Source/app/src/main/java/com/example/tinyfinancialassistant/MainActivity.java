@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         float totalCost = foodCost + transportationCost + studyCost
                 + housingCost + entertainmentCost + clothingCost
                 + cleaningCost + personalCareCost + hobbyCost + otherCost;
-        moneyText.setText("$ " + String.valueOf(totalCost));
+        moneyText.setText(String.valueOf(totalCost));
 
         PieChart pieChart = findViewById(R.id.pieChart);
 
@@ -56,9 +56,10 @@ public class MainActivity extends AppCompatActivity {
         pieChart.getDescription().setEnabled(false);
         pieChart.setExtraOffsets(5, 10, 5, 5);
 
-        pieChart.setDrawHoleEnabled(false);
+        pieChart.setDrawHoleEnabled(true);
         pieChart.setHoleColor(Color.WHITE);
-        pieChart.setTransparentCircleRadius(61f);
+        pieChart.setHoleRadius(60);
+        pieChart.setTransparentCircleRadius(65f);
         pieChart.setRotationEnabled(false);
         pieChart.getLegend().setEnabled(false);
         pieChart.setTouchEnabled(true);
@@ -148,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
         float totalCost = foodCost + transportationCost + studyCost
                 + housingCost + entertainmentCost + clothingCost
                 + cleaningCost + personalCareCost + hobbyCost + otherCost;
-        moneyText.setText("$ " + String.valueOf(totalCost));
+        moneyText.setText(String.valueOf(totalCost));
 
         PieChart pieChart = findViewById(R.id.pieChart);
 
@@ -156,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
         pieChart.getDescription().setEnabled(false);
         pieChart.setExtraOffsets(5, 10, 5, 5);
 
-        pieChart.setDrawHoleEnabled(false);
+        pieChart.setDrawHoleEnabled(true);
         pieChart.setHoleColor(Color.WHITE);
         pieChart.setTransparentCircleRadius(61f);
         pieChart.setRotationEnabled(false);

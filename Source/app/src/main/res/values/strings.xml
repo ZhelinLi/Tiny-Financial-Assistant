@@ -3,4 +3,16 @@
     <string name="type_dis_day">by day</string>
     <string name="type_dis_week">by week</string>
     <string name="type_dis_month">by month</string>
+    <string name="today">Today</string>
+    <string name="dollar">$</string>
+    <string name="study">Study</string>
+    <string name="transport">Transportation</string>
+    <string name="hobby">Hobby</string>
+    <string name="housing">Housing</string>
+    <string name="entertain">Entertainment</string>
+    <string name="clothing">Clothing</string>
+    <string name="food">Food</string>
+    <string name="personal">Personal Care</string>
+    <string name="cleaning">Cleaning</string>
+    <string name="other">Other</string>
 </resources>

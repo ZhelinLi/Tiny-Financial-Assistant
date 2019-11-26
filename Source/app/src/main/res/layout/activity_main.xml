@@ -1,40 +1,417 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#DEE4E9"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/summary"
-        android:layout_marginTop="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Today you spent:"
-        android:textSize="32dp" />
+    <View
+        android:id="@+id/rectangle_2"
+        android:layout_width="416dp"
+        android:layout_height="540dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="-2dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-42dp"
+        android:background="@drawable/rectangle_2" />
+
+    <View
+        android:id="@+id/rectangle_4"
+        android:layout_width="192dp"
+        android:layout_height="56dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="-27dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rectangle_4" />
 
     <TextView
-        android:id="@+id/money"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/summary"
-        android:layout_marginTop="1dp"
-        android:gravity="center"
-        android:textSize="24dp"
-        android:text="$0" />
+        android:id="@+id/today"
+        android:layout_width="115.31dp"
+        android:layout_height="54.21dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/today"
+        android:textAppearance="@style/today"
+        android:gravity="center_horizontal|top" />
 
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/pieChart"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_below="@+id/money" />
+        android:layout_height="390dp"
+        android:layout_below="@+id/today" />
+
+    <TextView
+        android:id="@+id/money"
+        android:layout_width="153dp"
+        android:layout_height="96dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="145.21dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="229dp"
+        android:text="0"
+        android:textAppearance="@style/money"
+        android:textStyle="bold"
+        android:gravity="center_horizontal|top" />
+
+    <TextView
+        android:id="@+id/dollar"
+        android:layout_width="24.28dp"
+        android:layout_height="54.21dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="118dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="236.98dp"
+        android:text="@string/dollar"
+        android:textAppearance="@style/dollar"
+        android:textStyle="bold"
+        android:gravity="center_horizontal|top" />
+
+    <View
+        android:id="@+id/rectangle_1"
+        android:layout_width="134dp"
+        android:layout_height="34dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="24dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="495dp"
+        android:background="@drawable/rectangle_1" />
+
+        <TextView
+            android:id="@+id/study"
+            android:layout_width="58dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="499dp"
+            android:text="@string/study"
+            android:textAppearance="@style/spent"
+            android:gravity="center_horizontal|top" />
+
+        <TextView
+            android:id="@+id/study_money"
+            android:layout_width="64dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="88dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="499dp"
+            android:text="$0"
+            android:textAppearance="@style/spent"
+            android:gravity="center_horizontal|top" />
+    <View
+        android:id="@+id/rectangle_3"
+        android:layout_width="217dp"
+        android:layout_height="34dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="169dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="495dp"
+        android:background="@drawable/rectangle_3" />
+
+        <TextView
+            android:id="@+id/transport"
+            android:layout_width="142dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="175dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="499dp"
+            android:text="@string/transport"
+            android:textAppearance="@style/spent"
+            android:gravity="center_horizontal|top" />
+        <TextView
+            android:id="@+id/transport_money"
+            android:layout_width="54dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="320dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="499dp"
+            android:text="$0"
+            android:textAppearance="@style/spent"
+            android:gravity="center_horizontal|top" />
+
+    <View
+        android:id="@+id/rectangle_8"
+        android:layout_width="152dp"
+        android:layout_height="34dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="538dp"
+        android:background="@drawable/rectangle_8" />
+
+        <TextView
+            android:id="@+id/clothing"
+            android:layout_width="81dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="542dp"
+            android:text="@string/clothing"
+            android:textAppearance="@style/spent"
+            android:gravity="center_horizontal|top" />
+
+        <TextView
+            android:id="@+id/clothing_money"
+            android:layout_width="54dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="114dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="542dp"
+            android:text="$0"
+            android:textAppearance="@style/spent"
+            android:gravity="center_horizontal|top" />
+
+    <View
+        android:id="@+id/rectangle_6"
+        android:layout_width="155dp"
+        android:layout_height="34dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="190dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="538dp"
+        android:background="@drawable/rectangle_6" />
+
+        <TextView
+            android:id="@+id/housing"
+            android:layout_width="81dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="198dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="542dp"
+            android:text="@string/housing"
+            android:textAppearance="@style/spent"
+            android:gravity="center_horizontal|top" />
+
+        <TextView
+            android:id="@+id/housing_money"
+            android:layout_width="54dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="292dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="542dp"
+            android:text="$0"
+            android:textAppearance="@style/spent"
+            android:gravity="center_horizontal|top" />
+
+    <View
+        android:id="@+id/rectangle_7"
+        android:layout_width="206dp"
+        android:layout_height="34dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="581dp"
+        android:background="@drawable/rectangle_7" />
+
+        <TextView
+            android:id="@+id/entertain"
+            android:layout_width="142dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="27dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="585dp"
+            android:text="@string/entertain"
+            android:textAppearance="@style/spent"
+            android:gravity="center_horizontal|top" />
+
+        <TextView
+            android:id="@+id/entertain_money"
+            android:layout_width="54dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="169dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="585dp"
+            android:text="$0"
+            android:textAppearance="@style/spent"
+            android:gravity="center_horizontal|top" />
+
+    <View
+        android:id="@+id/rectangle_5"
+        android:layout_width="140dp"
+        android:layout_height="34dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="242dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="581dp"
+        android:background="@drawable/rectangle_5" />
+
+        <TextView
+            android:id="@+id/hobby"
+            android:layout_width="84dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="241dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="585dp"
+            android:text="@string/hobby"
+            android:textAppearance="@style/spent"
+            android:gravity="center_horizontal|top" />
+
+        <TextView
+            android:id="@+id/hobby_money"
+            android:layout_width="57dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="317dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="585dp"
+            android:text="$0"
+            android:textAppearance="@style/spent"
+            android:gravity="center_horizontal|top" />
+
+    <View
+        android:id="@+id/rectangle_9"
+        android:layout_width="124dp"
+        android:layout_height="34dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="624dp"
+        android:background="@drawable/rectangle_9" />
+
+        <TextView
+            android:id="@+id/food"
+            android:layout_width="58dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="29dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="628dp"
+            android:text="@string/food"
+            android:textAppearance="@style/spent"
+            android:gravity="center_horizontal|top" />
+
+        <TextView
+            android:id="@+id/food_money"
+            android:layout_width="63dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="628dp"
+            android:text="$0"
+            android:textAppearance="@style/spent"
+            android:gravity="center_horizontal|top" />
+
+    <View
+        android:id="@+id/rectangle_10"
+        android:layout_width="210dp"
+        android:layout_height="34dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="164dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="624dp"
+        android:background="@drawable/rectangle_10" />
+
+        <TextView
+            android:id="@+id/personal"
+            android:layout_width="142dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="169dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="628dp"
+            android:text="@string/personal"
+            android:textAppearance="@style/spent"
+            android:gravity="center_horizontal|top" />
+
+        <TextView
+            android:id="@+id/personal_money"
+            android:layout_width="58dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="308dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="628dp"
+            android:text="$0"
+            android:textAppearance="@style/spent"
+            android:gravity="center_horizontal|top" />
+
+    <View
+        android:id="@+id/rectangle_11"
+        android:layout_width="161dp"
+        android:layout_height="34dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="667dp"
+        android:background="@drawable/rectangle_11" />
+
+        <TextView
+            android:id="@+id/cleaning"
+            android:layout_width="84dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="33dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="671dp"
+            android:text="@string/cleaning"
+            android:textAppearance="@style/spent"
+            android:gravity="center_horizontal|top" />
+
+        <TextView
+            android:id="@+id/cleaning_money"
+            android:layout_width="59dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="119dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="671dp"
+            android:text="$0"
+            android:textAppearance="@style/spent"
+            android:gravity="center_horizontal|top" />
+
+    <View
+        android:id="@+id/rectangle_12"
+        android:layout_width="129dp"
+        android:layout_height="34dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="202dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="667dp"
+        android:background="@drawable/rectangle_12" />
+
+        <TextView
+            android:id="@+id/other"
+            android:layout_width="84dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="196dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="671dp"
+            android:text="@string/other"
+            android:textAppearance="@style/spent"
+            android:gravity="center_horizontal|top" />
+
+        <TextView
+            android:id="@+id/other_money"
+            android:layout_width="57dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="266dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="671dp"
+            android:text="$0"
+            android:textAppearance="@style/spent"
+            android:gravity="center_horizontal|top" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/pieChart">
+        android:layout_below="@+id/rectangle_11">
 
         <Button
             android:id="@+id/inputButton"
@@ -58,6 +435,4 @@
             android:text="list" />
 
     </LinearLayout>
-
-
 </RelativeLayout>
