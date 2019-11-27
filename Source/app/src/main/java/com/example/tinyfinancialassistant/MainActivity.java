@@ -96,11 +96,20 @@ public class MainActivity extends AppCompatActivity {
             dollars.add(new PieEntry(otherCost, "Other"));
         }
 
-
         PieDataSet dataSet = new PieDataSet(dollars, "Type");
         dataSet.setSliceSpace(3f);
         dataSet.setSelectionShift(5f);
-        dataSet.setColors(ColorTemplate.MATERIAL_COLORS);
+        dataSet.setColors(Color.parseColor("#F44336"),
+                Color.parseColor("#9C27B0"),
+                Color.parseColor("#3F51B5"),
+                Color.parseColor("#03A9F4"),
+                Color.parseColor("#3F51B5"),
+                Color.parseColor("#009688"),
+                Color.parseColor("#8BC34A"),
+                Color.parseColor("#FFD600"),
+                Color.parseColor("#FF9800"),
+                Color.parseColor("#795548"),
+                Color.parseColor("#607D8B"));
         pieChart.animateY(2000, Easing.EaseInOutCubic);
 
         PieData data = new PieData((dataSet));
