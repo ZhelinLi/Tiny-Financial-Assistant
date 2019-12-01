@@ -9,37 +9,70 @@
     tools:context=".ListActivity">
 
     <LinearLayout
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:weightSum="100">
+
+        <EditText
+            android:id="@+id/searchText"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="80"
+            android:hint="Enter Note to Search"/>
+
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:drawableLeft="@drawable/ic_search"
+            app:backgroundTint="#61B3F5"
+            android:layout_weight="10"/>
+
+        <Button
+            android:id="@+id/calendarButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:drawableLeft="@drawable/ic_date_range_black_24dp"
+            app:backgroundTint="#61B3F5"
+            android:layout_weight="10"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@id/search_bar"
         android:id="@+id/listHead"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
+        android:layout_height="40dp"
         android:background="@android:color/holo_blue_light"
         android:weightSum="100">
 
-        <TextView
+        <Spinner
             android:id="@+id/type_head"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:text="type"
-            android:layout_weight="20" />
+            android:layout_weight="35" />
 
         <TextView
             android:id="@+id/detail_head"
             android:layout_width="0dp"
+            android:gravity="center"
             android:layout_height="match_parent"
-            android:text="data"
-            android:layout_weight="60" />
+            android:text="DATA"
+            android:layout_weight="50" />
 
         <TextView
             android:id="@+id/cost_head"
             android:layout_width="0dp"
+            android:gravity="center"
             android:layout_height="match_parent"
-            android:text="cost"
-            android:layout_weight="20" />
+            android:text="COST"
+            android:layout_weight="15" />
     </LinearLayout>
 
     <ListView
         android:id="@+id/data_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/listHead" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

@@ -5,22 +5,32 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 public class ListActivity extends AppCompatActivity {
     ArrayList<DataObject> dataList;
     AllDBHelper db;
     private ListView listView;
     private ListAdapter cAdapter;
-    EditText searchNoteText;
+    EditText searchText;
+    Button searchButton, calendarButton;
+    Spinner typeHead;
+    String typeSelected, firstDay, today;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +38,52 @@ public class ListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list);
 
         listView = (ListView) findViewById(R.id.data_list);
+        searchText = (EditText) findViewById(R.id.searchText);
+        searchButton = (Button) findViewById(R.id.searchButton);
+        calendarButton = (Button) findViewById(R.id.calendarButton);
+        typeHead = (Spinner) findViewById(R.id.type_head);
 
         db = new AllDBHelper(this);
-        dataList = db.getAllData("");
+        Date c = Calendar.getInstance().getTime();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        today = "'" + df.format(c) + "'";
+        firstDay = "'1970-01-01'";
+
+        ArrayAdapter<String> typeAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.type_list));
+        typeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        typeHead.setAdapter(typeAdapter);
+
+        typeHead.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (adapterView.getItemAtPosition(i).equals("TYPE")) {
+                    fillData(searchText, firstDay, today, "");
+                    searchButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            fillData(searchText, firstDay, today, "");
+
+                        }
+                    });
+                }
+                else {
+                    fillData(searchText, firstDay, today, typeHead.getSelectedItem().toString());
+                    searchButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            fillData(searchText, firstDay, today, typeHead.getSelectedItem().toString());
+
+                        }
+                    });
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) { }
+        });
+
+        dataList = db.getAllData("", firstDay, today, "");
 
         cAdapter = new ListAdapter(this, dataList);
         listView.setAdapter(cAdapter);
@@ -40,6 +93,14 @@ public class ListActivity extends AppCompatActivity {
 
                 simpleAlert(view, i);
                 return false;
+            }
+        });
+
+
+        calendarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), CalendarActivity.class));
             }
         });
     }
@@ -59,7 +120,6 @@ public class ListActivity extends AppCompatActivity {
                         db.delete(currentObj.getId());
                         cAdapter.remove(cAdapter.getDataAt(i));
                         cAdapter.notifyDataSetChanged();
-                        // cannot select current view in the list????
 
                     }
                 });
@@ -69,4 +129,13 @@ public class ListActivity extends AppCompatActivity {
         builder.setCancelable(false);
         builder.show();
     }
+
+    public void fillData(EditText searchText, String StartD, String EndD, String typeSelected) {
+        String s = searchText.getText().toString();
+        // ************** waiting calendar stuff **************
+        dataList = db.getAllData(s, StartD, EndD, typeSelected);
+        cAdapter = new ListAdapter(getApplicationContext(), dataList);
+        listView.setAdapter(cAdapter);
+    }
 }
+
