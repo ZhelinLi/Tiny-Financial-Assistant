@@ -17,21 +17,21 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public class CalenderActivity extends AppCompatActivity {
+public class CalendarActivity extends AppCompatActivity {
     //CalendarView calendarView;
     CalendarPickerView calendar;
     Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calender);
+        setContentView(R.layout.activity_calendar);
 
        /* calendarView = findViewById(R.id.calendar);
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
                 String date = (month+1) + "/" + dayOfMonth + "/" + year;
-                Toast.makeText(CalenderActivity.this, date, Toast.LENGTH_SHORT).show();
+                Toast.makeText(CalendarActivity.this, date, Toast.LENGTH_SHORT).show();
             }
         });*/
         final Calendar nextYear = Calendar.getInstance();
@@ -75,7 +75,7 @@ public class CalenderActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //List<String> dates = new ArrayList<String>();
                 //dates.add(calendar.getSelectedDates().toString());
-                Toast.makeText(CalenderActivity.this, calendar.getSelectedDates().toString(), Toast.LENGTH_LONG).show();
+                Toast.makeText(CalendarActivity.this, calendar.getSelectedDates().toString(), Toast.LENGTH_LONG).show();
             }
         });
     }

@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ListActivity"></activity>
-        <activity android:name=".CalenderActivity" />
+        <activity android:name=".CalendarActivity" />
         <activity android:name=".InputActivity" />
         <activity android:name=".TypeActivity" />
         <activity android:name=".MainActivity">
