@@ -40,30 +40,22 @@ public class AllDBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public ArrayList<DataObject> getAllData(String s) {
+    public ArrayList<DataObject> getAllData(String s, String startD, String endD, String t) {
         SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery("select * from "+ AllEntry.TABLE_NAME +
-                " where " + AllEntry.COLUMN_NOTE +
-                " like '" + s + "%';", null);
-        //Cursor cursor = db.rawQuery("select * from "+ AllEntry.TABLE_NAME +";",null);
-        ArrayList<DataObject> objectList = new ArrayList<>();
-        while(cursor.moveToNext()) {
-            int id = Integer.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_ID)));
-            String type = cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_TYPE));
-            float cost = Float.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_PRICE)));
-            Date time = Date.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_DATE)));
-            String note = cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_NOTE));
-            DataObject obj = new DataObject(id, type, cost, time, note);
-            objectList.add(obj);
+        Cursor cursor = null;
+        if (t == "" || t == null) {
+            cursor = db.rawQuery("select * from "+ AllEntry.TABLE_NAME +
+                    " where " + AllEntry.COLUMN_NOTE +
+                    " like '%" + s + "%' and " +
+                    AllEntry.COLUMN_DATE + " between " + startD + " and " + endD + ";", null);
         }
-        return objectList;
-    }
-
-    public ArrayList<DataObject> searchNote(String s) {
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery("select * from "+ AllEntry.TABLE_NAME +
-                " where " + AllEntry.COLUMN_NOTE +
-                " like '" + s + "%';", null);
+        else {
+             cursor = db.rawQuery("select * from "+ AllEntry.TABLE_NAME +
+                    " where " + AllEntry.COLUMN_NOTE +
+                    " like '%" + s + "%' and " +
+                    AllEntry.COLUMN_DATE + " between " + startD + " and " + endD + " and " +
+                    AllEntry.COLUMN_TYPE + " like '%" + t + "';", null);
+        }
         ArrayList<DataObject> objectList = new ArrayList<>();
         while(cursor.moveToNext()) {
             int id = Integer.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_ID)));
