@@ -30,7 +30,7 @@ public class ListActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.data_list);
 
         db = new AllDBHelper(this);
-        dataList = db.getAllData();
+        dataList = db.getAllData("");
 
         cAdapter = new ListAdapter(this, dataList);
         listView.setAdapter(cAdapter);
@@ -54,16 +54,13 @@ public class ListActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),
                                 "deleted",
                                 Toast.LENGTH_SHORT).show();
+                        DataObject currentObj = dataList.get(i);
+                        db = new AllDBHelper(getApplicationContext());
+                        db.delete(currentObj.getId());
                         cAdapter.remove(cAdapter.getDataAt(i));
                         cAdapter.notifyDataSetChanged();
-                        db = new AllDBHelper(getApplicationContext());
                         // cannot select current view in the list????
-                        /*
-                         DataObject currentObj = dataList.get(i);
-                         Log.d("********************",currentObj.getNote());
-                         
-                         */
-                        // db.delete(currentObj.getId());
+
                     }
                 });
         builder.setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
