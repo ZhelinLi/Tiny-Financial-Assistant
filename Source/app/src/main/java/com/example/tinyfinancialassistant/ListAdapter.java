@@ -83,11 +83,7 @@ public class ListAdapter extends ArrayAdapter<DataObject> {
 
         typeView.setImageBitmap(bm);
         noteView.setText(currentData.getNote());
-        Timestamp stamp = currentData.getTime();
-        //Date d = new Date(stamp.getTime());
-        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
-        Date date = new Date(stamp.getTime());
-        timeView.setText(sdf.format(date));//date.toString());
+        timeView.setText((currentData.getTime()).toString());
         costView.setText(String.valueOf(currentData.getCost()));
         return listItem;
     }

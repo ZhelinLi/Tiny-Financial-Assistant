@@ -12,6 +12,6 @@ public class AllContract {
         public static final String COLUMN_TYPE = "type";
         public static final String COLUMN_PRICE = "price";
         public static final String COLUMN_NOTE = "note";
-        public static final String COLUMN_TIMESTAMP = "timestamp";
+        public static final String COLUMN_DATE = "date";
     }
 }

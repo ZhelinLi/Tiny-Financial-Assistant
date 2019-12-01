@@ -10,7 +10,7 @@ import com.example.tinyfinancialassistant.AllContract.*;
 
 import androidx.annotation.Nullable;
 
-import java.sql.Timestamp;
+import java.sql.Date;
 import java.util.ArrayList;
 
 public class AllDBHelper extends SQLiteOpenHelper {
@@ -29,7 +29,7 @@ public class AllDBHelper extends SQLiteOpenHelper {
                 AllEntry.COLUMN_TYPE + " TEXT NOT NULL, " +
                 AllEntry.COLUMN_PRICE + " INTEGER NOT NULL, " +
                 AllEntry.COLUMN_NOTE + " TEXT, " +
-                AllEntry.COLUMN_TIMESTAMP + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
+                AllEntry.COLUMN_DATE + " DATE DEFAULT CURRENT_DATE" +
                 ");";
         db.execSQL(SQL_CREATE_ALLLIST_TABLE);
     }
@@ -40,15 +40,18 @@ public class AllDBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public ArrayList<DataObject> getAllData() {
+    public ArrayList<DataObject> getAllData(String s) {
         SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery("select * from "+ AllEntry.TABLE_NAME +";",null);
+        Cursor cursor = db.rawQuery("select * from "+ AllEntry.TABLE_NAME +
+                " where " + AllEntry.COLUMN_NOTE +
+                " like '" + s + "%';", null);
+        //Cursor cursor = db.rawQuery("select * from "+ AllEntry.TABLE_NAME +";",null);
         ArrayList<DataObject> objectList = new ArrayList<>();
         while(cursor.moveToNext()) {
             int id = Integer.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_ID)));
             String type = cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_TYPE));
             float cost = Float.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_PRICE)));
-            Timestamp time = Timestamp.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_TIMESTAMP)));
+            Date time = Date.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_DATE)));
             String note = cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_NOTE));
             DataObject obj = new DataObject(id, type, cost, time, note);
             objectList.add(obj);
@@ -66,7 +69,7 @@ public class AllDBHelper extends SQLiteOpenHelper {
             int id = Integer.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_ID)));
             String type = cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_TYPE));
             float cost = Float.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_PRICE)));
-            Timestamp time = Timestamp.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_TIMESTAMP)));
+            Date time = Date.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_DATE)));
             String note = cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_NOTE));
             DataObject obj = new DataObject(id, type, cost, time, note);
             objectList.add(obj);
