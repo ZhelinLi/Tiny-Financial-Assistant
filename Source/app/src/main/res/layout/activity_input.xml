@@ -329,13 +329,16 @@
 
     <Button
         android:id="@+id/inputAddItemButton"
-        android:textSize="30dp"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
+        android:layout_width="240dp"
+        android:layout_height="64dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="86dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="609dp"
         android:onClick="addItem"
-        android:layout_below="@+id/inputCleaningButton"
-        android:gravity="center"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="165dp"
-        android:text="add item" />
+        android:background="@drawable/rectangle_15"
+        android:text="@string/add"
+        android:textAppearance="@style/add"
+        android:textStyle="bold"
+        android:elevation="4dp"/>
 </RelativeLayout>
