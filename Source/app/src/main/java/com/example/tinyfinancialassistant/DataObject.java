@@ -1,16 +1,17 @@
 package com.example.tinyfinancialassistant;
 
 import java.io.Serializable;
+import java.sql.Date;
 import java.sql.Timestamp;
 
 public class DataObject implements Serializable {
     private int id;
     private String type;
     private float cost;
-    private Timestamp time;
+    private Date time;
     private String note;
 
-    public DataObject(int id, String type, float cost, Timestamp time, String note) {
+    public DataObject(int id, String type, float cost, Date time, String note) {
         this.id = id;
         this.type = type;
         this.cost = cost;
@@ -42,11 +43,11 @@ public class DataObject implements Serializable {
         this.cost = cost;
     }
 
-    public Timestamp getTime() {
+    public Date getTime() {
         return time;
     }
 
-    public void setTime(Timestamp time) {
+    public void setTime(Date time) {
         this.time = time;
     }
 

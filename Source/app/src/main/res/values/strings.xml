@@ -19,4 +19,17 @@
     <string name="enter">Enter Amount</string>
     <string name="note">Additional Notes</string>
 
+    <string-array name="type_list">
+        <item>TYPE</item>
+        <item>Food</item>
+        <item>Transportation</item>
+        <item>Study</item>
+        <item>Housing</item>
+        <item>Entertainment</item>
+        <item>Clothing</item>
+        <item>Cleaning</item>
+        <item>PersonalCare</item>
+        <item>Hobby</item>
+        <item>Other</item>
+    </string-array>
 </resources>
