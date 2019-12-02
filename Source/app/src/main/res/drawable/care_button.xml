@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:state_pressed="true"
-        android:drawable="@drawable/care_invert" />
-    <item
-        android:state_pressed="false"
-        android:drawable="@drawable/care" />
-</selector>
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/ellipse_8"/>
+    <item android:drawable="@drawable/ic_169881781558095014"
+        android:gravity="center"/>
+</layer-list>

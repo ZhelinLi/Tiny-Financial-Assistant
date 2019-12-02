@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:state_pressed="true"
-        android:drawable="@drawable/study_invert" />
-    <item
-        android:state_pressed="false"
-        android:drawable="@drawable/study" />
-</selector>
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/ellipse_3"/>
+    <item android:drawable="@drawable/ic_13548034381556281667"
+        android:gravity="center"/>
+</layer-list>

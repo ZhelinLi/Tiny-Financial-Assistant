@@ -1,221 +1,331 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="6dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/input_page"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#DEE4E9">
+
+    <View
+        android:id="@+id/rectangle_2"
+        android:layout_width="416dp"
+        android:layout_height="296dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="-2dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-42dp"
+        android:background="@drawable/rectangle_2" />
+
+    <View
+        android:id="@+id/rectangle_4"
+        android:layout_width="192dp"
+        android:layout_height="56dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="-27dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rectangle_4" />
 
     <TextView
-        android:id="@+id/dollorsign"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="$"
-        android:textSize="20dp"
+        android:id="@+id/input"
+        android:layout_width="115.31dp"
+        android:layout_height="54.21dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="15dp"
-        />
+        android:layout_marginTop="20dp"
+        android:text="@string/input"
+        android:textAppearance="@style/title"
+        android:textStyle="bold"
+        android:gravity="center_horizontal|top" />
 
-    <EditText
-        android:id="@+id/inputEditText"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
+    <View
+        android:id="@+id/rectangle_13"
+        android:layout_width="336dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="38dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="0dp"
-        android:layout_marginLeft="10dp"
-        android:ems="20"
-        android:hint="Enter Money"
-        android:inputType="numberDecimal" />
+        android:layout_marginTop="91dp"
+        android:background="@drawable/rectangle_13" />
 
-    <EditText
-        android:id="@+id/inputNote"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        <TextView
+            android:id="@+id/dollar_sign"
+            android:layout_width="24dp"
+            android:layout_height="33dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="52dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="93dp"
+            android:text="@string/dollar"
+            android:textAppearance="@style/dollar_sign"
+            android:gravity="center_horizontal|top" />
+
+        <EditText
+            android:id="@+id/inputEditText"
+            android:layout_width="163dp"
+            android:layout_height="36dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="79dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="93dp"
+            android:textAppearance="@style/input"
+            android:hint="@string/enter"
+            android:inputType="numberDecimal"
+            android:background="#DEE4E9"/>
+
+    <View
+        android:id="@+id/rectangle_14"
+        android:layout_width="336dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="38dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="70dp"
-        android:layout_marginLeft="0dp"
-        android:ems="10"
-        android:hint="Enter Note"
-        android:inputType="text" />
+        android:layout_marginTop="145dp"
+        android:background="@drawable/rectangle_14" />
+
+        <EditText
+            android:id="@+id/inputNote"
+            android:layout_width="197dp"
+            android:layout_height="36dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="52dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="149dp"
+            android:textAppearance="@style/input"
+            android:hint="@string/note"
+            android:inputType="text"
+            android:background="#DEE4E9"/>
 
     <Button
         android:id="@+id/inputFoodButton"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
         android:onClick="setTypeFood"
-        android:background="@drawable/food_button"
-        android:layout_below="@+id/inputEditText"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="72dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="32dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="273dp"
+        android:background="@drawable/food_button" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/inputFoodButton"
-        android:text="Food"
-        android:layout_marginLeft="40dp"
-        />
+        <TextView
+            android:id="@+id/food"
+            android:layout_width="30dp"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="53dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="349dp"
+            android:text="@string/food"
+            android:textAppearance="@style/food"
+            android:gravity="center_horizontal|top" />
 
     <Button
         android:id="@+id/inputTransportationButton"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
         android:onClick="setTypeTransportation"
-        android:background="@drawable/transport_button"
-        android:layout_below="@+id/inputEditText"
-        android:layout_marginLeft="65dp"
-        android:layout_marginTop="72dp"
-        android:layout_toRightOf="@+id/inputFoodButton" />
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="124dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="273dp"
+        android:background="@drawable/transport_button"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/inputTransportationButton"
-        android:text="Transportation"
-        android:layout_marginLeft="148dp"
-        />
+        <TextView
+            android:id="@+id/transport"
+            android:layout_width="89dp"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="115dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="349dp"
+            android:text="@string/transport"
+            android:textAppearance="@style/transport"
+            android:gravity="center_horizontal|top" />
 
     <Button
         android:id="@+id/inputStudyButton"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
         android:onClick="setTypeStudy"
-        android:background="@drawable/study_button"
-        android:layout_below="@+id/inputEditText"
-        android:layout_marginLeft="65dp"
-        android:layout_marginTop="72dp"
-        android:layout_toRightOf="@+id/inputTransportationButton" />
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="216dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="273dp"
+        android:background="@drawable/study_button"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/inputStudyButton"
-        android:text="Study"
-        android:layout_marginLeft="320dp"
-        />
+        <TextView
+            android:id="@+id/study"
+            android:layout_width="34dp"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="235dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="349dp"
+            android:text="@string/study"
+            android:textAppearance="@style/study"
+            android:gravity="center_horizontal|top" />
 
     <Button
         android:id="@+id/inputHousingButton"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="308dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="273dp"
         android:onClick="setTypeHousing"
-        android:background="@drawable/housing_button"
-        android:layout_below="@+id/inputFoodButton"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="50dp" />
+        android:background="@drawable/housing_button" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/inputHousingButton"
-        android:text="Housing"
-        android:layout_marginLeft="30dp"
-        />
+        <TextView
+            android:id="@+id/housing"
+            android:layout_width="49dp"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="319dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="349dp"
+            android:text="@string/housing"
+            android:textAppearance="@style/housing"
+            android:gravity="center_horizontal|top" />
 
     <Button
         android:id="@+id/inputEntertainmentButton"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="32dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="385dp"
         android:onClick="setTypeEntertainment"
-        android:background="@drawable/entertainment_button"
-        android:layout_below="@+id/inputTransportationButton"
-        android:layout_marginLeft="65dp"
-        android:layout_marginTop="50dp"
-        android:layout_toRightOf="@+id/inputHousingButton" />
+        android:background="@drawable/entertainment_button" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/inputEntertainmentButton"
-        android:text="Entertainment"
-        android:layout_marginLeft="150dp"
-        />
+        <TextView
+            android:id="@+id/entertain"
+            android:layout_width="86dp"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="25dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="461dp"
+            android:text="@string/entertain"
+            android:textAppearance="@style/entertain"
+            android:gravity="center_horizontal|top" />
 
     <Button
         android:id="@+id/inputClothingButton"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="124dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="385dp"
         android:onClick="setTypeClothing"
-        android:background="@drawable/clothing_button"
-        android:layout_below="@+id/inputStudyButton"
-        android:layout_marginLeft="65dp"
-        android:layout_marginTop="50dp"
-        android:layout_toRightOf="@+id/inputEntertainmentButton" />
+        android:background="@drawable/clothing_button" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/inputClothingButton"
-        android:text="Clothing"
-        android:layout_marginLeft="310dp"
-        />
+        <TextView
+            android:id="@+id/clothing"
+            android:layout_width="51dp"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="134dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="461dp"
+            android:text="@string/clothing"
+            android:textAppearance="@style/clothing"
+            android:gravity="center_horizontal|top" />
 
     <Button
         android:id="@+id/inputCleaningButton"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="216dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="385dp"
         android:onClick="setTypeCleaning"
-        android:background="@drawable/cleaning_button"
-        android:layout_below="@+id/inputClothingButton"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="50dp" />
+        android:background="@drawable/cleaning_button" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/inputCleaningButton"
-        android:text="Cleaning"
-        android:layout_marginLeft="25dp"
-        />
+        <TextView
+            android:id="@+id/cleaning"
+            android:layout_width="55dp"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="224dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="461dp"
+            android:text="@string/cleaning"
+            android:textAppearance="@style/cleaning"
+            android:gravity="center_horizontal|top" />
 
     <Button
         android:id="@+id/inputPersonalCareButton"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="308dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="385dp"
         android:onClick="setTypePersonalCare"
-        android:background="@drawable/care_button"
-        android:layout_below="@+id/inputEntertainmentButton"
-        android:layout_marginLeft="65dp"
-        android:layout_marginTop="50dp"
-        android:layout_toRightOf="@+id/inputCleaningButton" />
+        android:background="@drawable/care_button" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/inputPersonalCareButton"
-        android:text="PersonalCare"
-        android:layout_marginLeft="150dp"
-        />
+        <TextView
+            android:id="@+id/personal"
+            android:layout_width="85dp"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="301dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="461dp"
+            android:text="@string/personal"
+            android:textAppearance="@style/care"
+            android:gravity="center_horizontal|top" />
 
     <Button
         android:id="@+id/inputHobbyButton"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="124dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="497dp"
         android:onClick="setTypeHobby"
-        android:background="@drawable/hobby_button"
-        android:layout_below="@+id/inputClothingButton"
-        android:layout_toRightOf="@+id/inputPersonalCareButton"
-        android:layout_marginLeft="65dp"
-        android:layout_marginTop="50dp" />
+        android:background="@drawable/hobby_button" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/inputHobbyButton"
-        android:text="Hobby"
-        android:layout_marginLeft="310dp"
-        />
+        <TextView
+            android:id="@+id/hobby"
+            android:layout_width="39dp"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="140dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="573dp"
+            android:text="@string/hobby"
+            android:textAppearance="@style/hobby"
+            android:gravity="center_horizontal|top" />
 
     <Button
         android:id="@+id/inputOtherButton"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="216dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="497dp"
         android:onClick="setTypeOther"
-        android:layout_below="@+id/inputCleaningButton"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="50dp"
-        android:backgroundTint="#FFFFFF"
-        android:textSize="15dp"
-        android:text="Other" />
+        android:background="@drawable/other_button"/>
+
+        <TextView
+            android:id="@+id/other"
+            android:layout_width="34dp"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="235dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="573dp"
+            android:text="@string/other"
+            android:textAppearance="@style/other"
+            android:gravity="center_horizontal|top" />
 
     <Button
         android:id="@+id/inputAddItemButton"

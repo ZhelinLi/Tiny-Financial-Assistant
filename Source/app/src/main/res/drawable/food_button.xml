@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:state_pressed="true"
-        android:drawable="@drawable/food_invert" />
-    <item
-        android:state_pressed="false"
-        android:drawable="@drawable/food" />
-</selector>
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/ellipse_1"/>
+    <item android:drawable="@drawable/ic_7744402091556280915"
+        android:gravity="center"/>
+</layer-list>
