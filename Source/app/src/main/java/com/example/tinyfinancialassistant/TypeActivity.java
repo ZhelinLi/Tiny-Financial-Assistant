@@ -1,10 +1,12 @@
 package com.example.tinyfinancialassistant;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.github.mikephil.charting.charts.HorizontalBarChart;
 import com.github.mikephil.charting.components.XAxis;
@@ -20,6 +22,7 @@ import java.util.ArrayList;
 public class TypeActivity extends AppCompatActivity {
     FloatingActionButton button_calender;
     AllDBHelper db;
+    //private static final int SECOND_ACTIVITY_REQUEST_CODE = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +58,9 @@ public class TypeActivity extends AppCompatActivity {
         button_calender.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(TypeActivity.this, CalendarActivity.class));
+                Intent i = new Intent(TypeActivity.this, CalendarActivity.class);
+                startActivityForResult(i, 1);
+                //startActivity(new Intent(TypeActivity.this, CalendarActivity.class));
             }
         });
     }
@@ -86,6 +91,17 @@ public class TypeActivity extends AppCompatActivity {
         entries.add(new BarEntry(9f, otherCost));
 
         return entries;
+    }
+    // This method is called when the calendar activity finishes
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // get String data from Intent
+        if (requestCode == 1) {
+            if(resultCode == Activity.RESULT_OK){
+                String date =data.getStringExtra("Date");
+                Toast.makeText(TypeActivity.this, date, Toast.LENGTH_LONG).show();
+            }
+        }
     }
 }
 

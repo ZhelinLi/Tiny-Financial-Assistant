@@ -1,13 +1,9 @@
 package com.example.tinyfinancialassistant;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,6 +12,9 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -100,7 +99,9 @@ public class ListActivity extends AppCompatActivity {
         calendarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), CalendarActivity.class));
+                Intent i = new Intent(ListActivity.this, CalendarActivity.class);
+                startActivityForResult(i, 1);
+                //startActivity(new Intent(getApplicationContext(), CalendarActivity.class));
             }
         });
     }
@@ -136,6 +137,17 @@ public class ListActivity extends AppCompatActivity {
         dataList = db.getAllData(s, StartD, EndD, typeSelected);
         cAdapter = new ListAdapter(getApplicationContext(), dataList);
         listView.setAdapter(cAdapter);
+    }
+    // This method is called when the calendar activity finishes
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    // get String data from Intent
+        if (requestCode == 1) {
+            if(resultCode == Activity.RESULT_OK){
+                String date =data.getStringExtra("Date");
+                Toast.makeText(ListActivity.this, date, Toast.LENGTH_LONG).show();
+            }
+        }
     }
 }
 
