@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public class TypeActivity extends AppCompatActivity {
     FloatingActionButton button_calender;
     AllDBHelper db;
-    //private static final int SECOND_ACTIVITY_REQUEST_CODE = 0;
+    String  firstDay, today;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,7 +99,12 @@ public class TypeActivity extends AppCompatActivity {
         if (requestCode == 1) {
             if(resultCode == Activity.RESULT_OK){
                 String date =data.getStringExtra("Date");
-                Toast.makeText(TypeActivity.this, date, Toast.LENGTH_LONG).show();
+                String temp = date.substring(1);
+                date = temp.substring(0, date.length() - 2);
+                String[] dateList = date.split(",");
+                firstDay = dateList[0];
+                today = dateList[dateList.length - 1];
+                Toast.makeText(TypeActivity.this, firstDay + today , Toast.LENGTH_LONG).show();
             }
         }
     }

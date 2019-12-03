@@ -145,7 +145,12 @@ public class ListActivity extends AppCompatActivity {
         if (requestCode == 1) {
             if(resultCode == Activity.RESULT_OK){
                 String date =data.getStringExtra("Date");
-                Toast.makeText(ListActivity.this, date, Toast.LENGTH_LONG).show();
+                String temp = date.substring(1);
+                date = temp.substring(0, date.length() - 2);
+                String[] dateList = date.split(",");
+                firstDay = dateList[0];
+                today = dateList[dateList.length - 1];
+                Toast.makeText(ListActivity.this, firstDay + today , Toast.LENGTH_LONG).show();
             }
         }
     }
