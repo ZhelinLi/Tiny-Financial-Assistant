@@ -19,7 +19,7 @@
     <string name="enter">Enter Amount</string>
     <string name="note">Additional Notes</string>
     <string name="add">Add Item</string>
-
+    <string name="report">Report</string>
 
     <string-array name="type_list">
         <item>TYPE</item>

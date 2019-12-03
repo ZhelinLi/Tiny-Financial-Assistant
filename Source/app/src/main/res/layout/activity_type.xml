@@ -1,62 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#DEE4E9"
     tools:context=".TypeActivity">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Type Report"
-            android:textSize="15dp"
-            android:layout_marginLeft="160dp"
-            />
-    </LinearLayout>
+    <View
+        android:id="@+id/rectangle_2"
+        android:layout_width="416dp"
+        android:layout_height="217dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="-2dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-42dp"
+        android:background="@drawable/rectangle_2" />
+
+    <View
+        android:id="@+id/rectangle_4"
+        android:layout_width="192dp"
+        android:layout_height="56dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="-27dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rectangle_4" />
+
+    <TextView
+        android:id="@+id/report"
+        android:layout_width="122dp"
+        android:layout_height="54.21dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="22dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/report"
+        android:textAppearance="@style/title"
+        android:textStyle="bold"
+        android:gravity="center_horizontal|top" />
+
+    <TextView
+        android:layout_width="24.28dp"
+        android:layout_height="54.21dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="47dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="82dp"
+        android:text="@string/dollar"
+        android:textAppearance="@style/dollar"
+        android:textStyle="bold"
+        android:gravity="center_horizontal|top" />
+
+    <TextView
+        android:id="@+id/type_money"
+        android:layout_width="293dp"
+        android:layout_height="96dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="71dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="74dp"
+        android:text="0.0"
+        android:textAppearance="@style/report_money"
+        android:textStyle="bold"
+        android:gravity="center_horizontal|top" />
+
+    <View
+        android:layout_width="376dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="18dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="190dp"
+        android:background="@drawable/rectangle_16" />
 
     <com.github.mikephil.charting.charts.HorizontalBarChart
         android:id="@+id/barChart"
-        android:layout_width="match_parent"
+        android:layout_width="368dp"
         android:layout_height="550dp"
-        android:layout_marginTop="10dp"
-        tools:layout_editor_absoluteX="0dp"></com.github.mikephil.charting.charts.HorizontalBarChart>
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="200dp"
+        tools:layout_editor_absoluteX="0dp" />
 
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    <RadioButton
-        android:id="@+id/dayRadioButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/barChart"
-        android:text="@string/type_dis_day" />
-
-    <RadioButton
-        android:id="@+id/weekRadioButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/type_dis_week" />
-
-    <RadioButton
-        android:id="@+id/monthRadioButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/barChart"
-        android:text="@string/type_dis_month" />
-    </RadioGroup>
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <Button
         android:id="@+id/floating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginLeft="330dp"
+        android:layout_marginTop="700dp"
         android:clickable="true"
-        app:backgroundTint="#61B3F5"
-        app:srcCompat="@drawable/ic_date_range_black_24dp" />
-
-
-</LinearLayout>
+        android:background="@drawable/floating_button" />
+</RelativeLayout>

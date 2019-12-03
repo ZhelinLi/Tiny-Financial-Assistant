@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.HorizontalBarChart;
 import com.github.mikephil.charting.components.XAxis;
@@ -18,16 +20,34 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 
 public class TypeActivity extends AppCompatActivity {
-    FloatingActionButton button_calender;
+    Button button_calender;
+    TextView moneyText;
     AllDBHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_type);
+        moneyText = (TextView) findViewById(R.id.type_money);
 
         HorizontalBarChart barChart = findViewById(R.id.barChart);
         button_calender = findViewById(R.id.floating);
+
+        db = new AllDBHelper(getApplicationContext());
+        float foodCost = db.getTotalFood();
+        float transportationCost = db.getTotalTransportation();
+        float studyCost = db.getTotalStudy();
+        float housingCost = db.getTotalHousing();
+        float entertainmentCost = db.getTotalEntertainment();
+        float clothingCost = db.getTotalClothing();
+        float cleaningCost = db.getTotalCleaning();
+        float personalCareCost = db.getTotalPersonalCare();
+        float hobbyCost = db.getTotalHobby();
+        float otherCost = db.getTotalOther();
+        float totalCost = foodCost + transportationCost + studyCost
+                + housingCost + entertainmentCost + clothingCost
+                + cleaningCost + personalCareCost + hobbyCost + otherCost;
+        moneyText.setText(String.valueOf(totalCost));
 
         BarDataSet barDataSet = new BarDataSet(getData(), "Report");
 
