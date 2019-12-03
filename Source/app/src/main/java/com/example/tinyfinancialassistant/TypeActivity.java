@@ -1,12 +1,14 @@
 package com.example.tinyfinancialassistant;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.github.mikephil.charting.charts.HorizontalBarChart;
 import com.github.mikephil.charting.components.XAxis;
@@ -23,6 +25,7 @@ public class TypeActivity extends AppCompatActivity {
     Button button_calender;
     TextView moneyText;
     AllDBHelper db;
+    String  firstDay, today;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +78,9 @@ public class TypeActivity extends AppCompatActivity {
         button_calender.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(TypeActivity.this, CalendarActivity.class));
+                Intent i = new Intent(TypeActivity.this, CalendarActivity.class);
+                startActivityForResult(i, 1);
+                //startActivity(new Intent(TypeActivity.this, CalendarActivity.class));
             }
         });
     }
@@ -106,6 +111,22 @@ public class TypeActivity extends AppCompatActivity {
         entries.add(new BarEntry(9f, otherCost));
 
         return entries;
+    }
+    // This method is called when the calendar activity finishes
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // get String data from Intent
+        if (requestCode == 1) {
+            if(resultCode == Activity.RESULT_OK){
+                String date =data.getStringExtra("Date");
+                String temp = date.substring(1);
+                date = temp.substring(0, date.length() - 2);
+                String[] dateList = date.split(",");
+                firstDay = dateList[0];
+                today = dateList[dateList.length - 1];
+                Toast.makeText(TypeActivity.this, firstDay + today , Toast.LENGTH_LONG).show();
+            }
+        }
     }
 }
 
