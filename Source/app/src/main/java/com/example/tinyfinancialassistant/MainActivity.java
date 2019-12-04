@@ -15,15 +15,20 @@ import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
     Button inputButton, typeButton, listButton;
     TextView moneyText, studyMoney, transportationMoney, clothingMoney, housingMoney, entertainmentMoney, hobbyMoney, foodMoeny,
     personalMoney, cleaningMoney, otherMoney;
     AllDBHelper db;
-    String today = "'2019-12-04'";
     // today = "'" + df.format(c) + "'";
+    Date c = Calendar.getInstance().getTime();
+    SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+    String today = "'" + df.format(c) + "'";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

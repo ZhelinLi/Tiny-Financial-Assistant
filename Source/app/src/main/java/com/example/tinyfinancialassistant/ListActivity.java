@@ -46,7 +46,7 @@ public class ListActivity extends AppCompatActivity {
         db = new AllDBHelper(this);
         Date c = Calendar.getInstance().getTime();
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-        // today = "'2019-12-03'";
+
         today = "'" + df.format(c) + "'";
         if (lastDay == null || lastDay == "") lastDay = today;
         firstDay = "'1970-01-01'";
@@ -143,20 +143,33 @@ public class ListActivity extends AppCompatActivity {
                 String date =data.getStringExtra("Date");
                 String temp = date.substring(1);
                 date = temp.substring(0, date.length() - 2);
-                String[] dateList = date.split(",");
+                String[] dateList = date.split(", ");
                 firstDay = "'"+dateList[0]+"'";
-                //lastDay = "'"+dateList[dateList.length - 1]+"'";
-                lastDay = "'2019-12-12'";
-                Log.d("**firstDay", firstDay);
-                Log.d("**lastDay", lastDay);
-                fillData(searchText, firstDay, lastDay, typeHead.getSelectedItem().toString());
-                searchButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        fillData(searchText, firstDay, lastDay, typeHead.getSelectedItem().toString());
+                lastDay = "'"+dateList[dateList.length - 1]+"'";
+                //lastDay = "'2019-12-04'";
 
-                    }
-                });
+                if (typeHead.getSelectedItem().toString().equals("TYPE")) {
+                    fillData(searchText, firstDay, lastDay, "");
+                    searchButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            fillData(searchText, firstDay, lastDay, "");
+
+                        }
+                    });
+                }
+
+                else {
+                    fillData(searchText, firstDay, lastDay, typeHead.getSelectedItem().toString());
+                    searchButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            fillData(searchText, firstDay, lastDay, typeHead.getSelectedItem().toString());
+
+                        }
+                    });
+                }
+
                 Toast.makeText(ListActivity.this, firstDay + lastDay , Toast.LENGTH_LONG).show();
             }
         }
@@ -164,7 +177,6 @@ public class ListActivity extends AppCompatActivity {
 
     public void fillData(EditText searchText, String StartD, String EndD, String typeSelected) {
         String s = searchText.getText().toString();
-        // ************** waiting calendar stuff **************
         dataList = db.getAllData(s, StartD, EndD, typeSelected);
         cAdapter = new ListAdapter(getApplicationContext(), dataList);
         listView.setAdapter(cAdapter);
