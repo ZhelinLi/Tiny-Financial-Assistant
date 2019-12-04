@@ -1,7 +1,5 @@
 package com.example.tinyfinancialassistant;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -9,12 +7,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
-import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -23,7 +22,8 @@ import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
     Button inputButton, typeButton, listButton;
-    TextView moneyText;
+    TextView moneyText, studyMoney, transportationMoney, clothingMoney, housingMoney, entertainmentMoney, hobbyMoney, foodMoeny,
+    personalMoney, cleaningMoney, otherMoney;
     AllDBHelper db;
     Date c = Calendar.getInstance().getTime();
     SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
@@ -39,6 +39,16 @@ public class MainActivity extends AppCompatActivity {
         typeButton = findViewById(R.id.typeButton);
         listButton = findViewById(R.id.listButton);
         moneyText = (TextView) findViewById(R.id.money);
+        studyMoney = findViewById(R.id.study_money);
+        transportationMoney = findViewById(R.id.transport_money);
+        clothingMoney = findViewById(R.id.clothing_money);
+        housingMoney = findViewById(R.id.housing_money);
+        entertainmentMoney = findViewById(R.id.entertain_money);
+        hobbyMoney = findViewById(R.id.hobby_money);
+        foodMoeny = findViewById(R.id.food_money);
+        personalMoney = findViewById(R.id.personal_money);
+        cleaningMoney = findViewById(R.id.cleaning_money);
+        otherMoney = findViewById(R.id.other_money);
 
         db = new AllDBHelper(getApplicationContext());
         float foodCost = db.getTotalFood(today, today);
@@ -55,6 +65,16 @@ public class MainActivity extends AppCompatActivity {
                 + housingCost + entertainmentCost + clothingCost
                 + cleaningCost + personalCareCost + hobbyCost + otherCost;
         moneyText.setText(String.valueOf(totalCost));
+        studyMoney.setText("$"+ String.valueOf(studyCost));
+        transportationMoney.setText("$"+ String.valueOf(transportationCost));
+        foodMoeny.setText("$"+ String.valueOf(foodCost));
+        housingMoney.setText("$"+ String.valueOf(housingCost));
+        entertainmentMoney.setText("$"+ String.valueOf(entertainmentCost));
+        clothingMoney.setText("$"+ String.valueOf(clothingCost));
+        cleaningMoney.setText("$"+ String.valueOf(cleaningCost));
+        personalMoney.setText("$"+ String.valueOf(personalCareCost));
+        hobbyMoney.setText("$"+ String.valueOf(hobbyCost));
+        otherMoney.setText("$"+ String.valueOf(otherCost));
 
         PieChart pieChart = findViewById(R.id.pieChart);
 
@@ -149,6 +169,16 @@ public class MainActivity extends AppCompatActivity {
         super.onRestart();
 
         moneyText = (TextView) findViewById(R.id.money);
+        studyMoney = findViewById(R.id.study_money);
+        transportationMoney = findViewById(R.id.transport_money);
+        clothingMoney = findViewById(R.id.clothing_money);
+        housingMoney = findViewById(R.id.housing_money);
+        entertainmentMoney = findViewById(R.id.entertain_money);
+        hobbyMoney = findViewById(R.id.hobby_money);
+        foodMoeny = findViewById(R.id.food_money);
+        personalMoney = findViewById(R.id.personal_money);
+        cleaningMoney = findViewById(R.id.cleaning_money);
+        otherMoney = findViewById(R.id.other_money);
 
         db = new AllDBHelper(getApplicationContext());
         float foodCost = db.getTotalFood(today, today);
@@ -165,6 +195,16 @@ public class MainActivity extends AppCompatActivity {
                 + housingCost + entertainmentCost + clothingCost
                 + cleaningCost + personalCareCost + hobbyCost + otherCost;
         moneyText.setText(String.valueOf(totalCost));
+        studyMoney.setText("$"+ String.valueOf(studyCost));
+        transportationMoney.setText("$"+ String.valueOf(transportationCost));
+        foodMoeny.setText("$"+ String.valueOf(foodCost));
+        housingMoney.setText("$"+ String.valueOf(housingCost));
+        entertainmentMoney.setText("$"+ String.valueOf(entertainmentCost));
+        clothingMoney.setText("$"+ String.valueOf(clothingCost));
+        cleaningMoney.setText("$"+ String.valueOf(cleaningCost));
+        personalMoney.setText("$"+ String.valueOf(personalCareCost));
+        hobbyMoney.setText("$"+ String.valueOf(hobbyCost));
+        otherMoney.setText("$"+ String.valueOf(otherCost));
 
         PieChart pieChart = findViewById(R.id.pieChart);
 
