@@ -16,15 +16,19 @@ import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
     Button inputButton, typeButton, listButton;
     TextView moneyText;
     AllDBHelper db;
-    String today = "'2019-12-03'";
-    // today = "'" + df.format(c) + "'";
+    Date c = Calendar.getInstance().getTime();
+    SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+    // today = "'2019-12-03'";
+    String today = "'" + df.format(c) + "'";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

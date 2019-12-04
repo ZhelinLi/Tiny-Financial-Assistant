@@ -27,7 +27,7 @@ import java.util.Date;
 public class TypeActivity extends AppCompatActivity {
     Button button_calender;
     TextView moneyText;
-    AllDBHelper db;d
+    AllDBHelper db;
     String lastDay, firstDay, today;
 
     @Override

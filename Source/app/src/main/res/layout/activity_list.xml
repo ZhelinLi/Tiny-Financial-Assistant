@@ -1,46 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/avc_main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#DEE4E9"
     tools:context=".ListActivity">
 
-    <LinearLayout
-        android:id="@+id/search_bar"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:weightSum="100">
+    <View
+        android:id="@+id/rectangle_2"
+        android:layout_width="416dp"
+        android:layout_height="190dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="-2dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-42dp"
+        android:background="@drawable/rectangle_2" />
+
+    <View
+        android:id="@+id/rectangle_4"
+        android:layout_width="192dp"
+        android:layout_height="56dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="-27dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rectangle_4" />
+
+    <TextView
+        android:id="@+id/report"
+        android:layout_width="122dp"
+        android:layout_height="54.21dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="22dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/list"
+        android:textAppearance="@style/title"
+        android:textStyle="bold"
+        android:gravity="center_horizontal|top" />
+
+        <View
+            android:id="@+id/rectangle_13"
+            android:layout_width="265dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="38dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="91dp"
+            android:background="@drawable/rectangle_13" />
 
         <EditText
             android:id="@+id/searchText"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="80"
+            android:layout_width="235dp"
+            android:layout_height="36dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="93dp"
+            android:textAppearance="@style/input"
+            android:background="#DEE4E9"
             android:hint="Enter Note to Search"/>
 
         <Button
             android:id="@+id/searchButton"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:drawableLeft="@drawable/ic_search"
-            app:backgroundTint="#61B3F5"
-            android:layout_weight="10"/>
-
-        <Button
-            android:id="@+id/calendarButton"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:drawableLeft="@drawable/ic_date_range_black_24dp"
-            app:backgroundTint="#61B3F5"
-            android:layout_weight="10"/>
-
-    </LinearLayout>
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="320dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="90dp"
+            android:clickable="true"
+            android:background="@drawable/search_button" />
 
     <LinearLayout
-        android:layout_below="@id/search_bar"
+        android:layout_below="@id/rectangle_2"
         android:id="@+id/listHead"
         android:layout_width="match_parent"
         android:layout_height="40dp"
@@ -72,7 +106,17 @@
 
     <ListView
         android:id="@+id/data_list"
+        android:layout_below="@id/listHead"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/calendarButton"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginLeft="330dp"
+        android:layout_marginTop="680dp"
+        android:clickable="true"
+        android:background="@drawable/floating_button"
+        android:elevation="4dp"/>
+</RelativeLayout>

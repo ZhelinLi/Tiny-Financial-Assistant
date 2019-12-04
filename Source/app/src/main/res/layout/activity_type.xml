@@ -87,7 +87,8 @@
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:layout_marginLeft="330dp"
-        android:layout_marginTop="700dp"
+        android:layout_marginTop="675dp"
         android:clickable="true"
-        android:background="@drawable/floating_button" />
+        android:background="@drawable/floating_button"
+        android:elevation="4dp"/>
 </RelativeLayout>

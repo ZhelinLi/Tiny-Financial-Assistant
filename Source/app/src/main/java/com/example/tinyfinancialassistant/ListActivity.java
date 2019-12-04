@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -42,6 +43,8 @@ public class ListActivity extends AppCompatActivity {
         searchButton = (Button) findViewById(R.id.searchButton);
         calendarButton = (Button) findViewById(R.id.calendarButton);
         typeHead = (Spinner) findViewById(R.id.type_head);
+
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
         db = new AllDBHelper(this);
         Date c = Calendar.getInstance().getTime();
