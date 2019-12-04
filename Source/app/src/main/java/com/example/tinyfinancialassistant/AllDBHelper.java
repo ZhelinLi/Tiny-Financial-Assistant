@@ -78,12 +78,12 @@ public class AllDBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    public float getTotalFood() {
+    public float getTotalFood(String startD, String endD) {
         SQLiteDatabase db = getReadableDatabase();
         String[] s = {"Food"};
         Cursor cursor = db.rawQuery("select " + AllEntry.COLUMN_PRICE + " from "+ AllEntry.TABLE_NAME +
-                " where " + AllEntry.COLUMN_TYPE +
-                " = ?", s);
+                " where " + AllEntry.COLUMN_TYPE + " = ? and " +
+                AllEntry.COLUMN_DATE + " between " + startD + " and " + endD + ";", s);
         float total = 0;
         while(cursor.moveToNext()) {
             float price = Float.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_PRICE)));
@@ -92,12 +92,12 @@ public class AllDBHelper extends SQLiteOpenHelper {
         return total;
     }
 
-    public float getTotalTransportation() {
+    public float getTotalTransportation(String startD, String endD) {
         SQLiteDatabase db = getReadableDatabase();
         String[] s = {"Transportation"};
         Cursor cursor = db.rawQuery("select " + AllEntry.COLUMN_PRICE + " from "+ AllEntry.TABLE_NAME +
-                " where " + AllEntry.COLUMN_TYPE +
-                " = ?", s);
+                " where " + AllEntry.COLUMN_TYPE + " = ? and " +
+                AllEntry.COLUMN_DATE + " between " + startD + " and " + endD + ";", s);
         float total = 0;
         while(cursor.moveToNext()) {
             float price = Float.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_PRICE)));
@@ -106,12 +106,12 @@ public class AllDBHelper extends SQLiteOpenHelper {
         return total;
     }
 
-    public float getTotalStudy() {
+    public float getTotalStudy(String startD, String endD) {
         SQLiteDatabase db = getReadableDatabase();
         String[] s = {"Study"};
         Cursor cursor = db.rawQuery("select " + AllEntry.COLUMN_PRICE + " from "+ AllEntry.TABLE_NAME +
-                " where " + AllEntry.COLUMN_TYPE +
-                " = ?", s);
+                " where " + AllEntry.COLUMN_TYPE + " = ? and " +
+                AllEntry.COLUMN_DATE + " between " + startD + " and " + endD + ";", s);
         float total = 0;
         while(cursor.moveToNext()) {
             float price = Float.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_PRICE)));
@@ -120,12 +120,12 @@ public class AllDBHelper extends SQLiteOpenHelper {
         return total;
     }
 
-    public float getTotalHousing() {
+    public float getTotalHousing(String startD, String endD) {
         SQLiteDatabase db = getReadableDatabase();
         String[] s = {"Housing"};
         Cursor cursor = db.rawQuery("select " + AllEntry.COLUMN_PRICE + " from "+ AllEntry.TABLE_NAME +
-                " where " + AllEntry.COLUMN_TYPE +
-                " = ?", s);
+                " where " + AllEntry.COLUMN_TYPE + " = ? and " +
+                AllEntry.COLUMN_DATE + " between " + startD + " and " + endD + ";", s);
         float total = 0;
         while(cursor.moveToNext()) {
             float price = Float.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_PRICE)));
@@ -134,12 +134,12 @@ public class AllDBHelper extends SQLiteOpenHelper {
         return total;
     }
 
-    public float getTotalEntertainment() {
+    public float getTotalEntertainment(String startD, String endD) {
         SQLiteDatabase db = getReadableDatabase();
         String[] s = {"Entertainment"};
         Cursor cursor = db.rawQuery("select " + AllEntry.COLUMN_PRICE + " from "+ AllEntry.TABLE_NAME +
-                " where " + AllEntry.COLUMN_TYPE +
-                " = ?", s);
+                " where " + AllEntry.COLUMN_TYPE + " = ? and " +
+                AllEntry.COLUMN_DATE + " between " + startD + " and " + endD + ";", s);
         float total = 0;
         while(cursor.moveToNext()) {
             float price = Float.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_PRICE)));
@@ -148,12 +148,12 @@ public class AllDBHelper extends SQLiteOpenHelper {
         return total;
     }
 
-    public float getTotalClothing(){
+    public float getTotalClothing(String startD, String endD){
         SQLiteDatabase db = getReadableDatabase();
         String[] s = {"Clothing"};
         Cursor cursor = db.rawQuery("select " + AllEntry.COLUMN_PRICE + " from "+ AllEntry.TABLE_NAME +
-                " where " + AllEntry.COLUMN_TYPE +
-                " = ?", s);
+                " where " + AllEntry.COLUMN_TYPE + " = ? and " +
+                AllEntry.COLUMN_DATE + " between " + startD + " and " + endD + ";", s);
         float total = 0;
         while(cursor.moveToNext()) {
             float price = Float.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_PRICE)));
@@ -162,12 +162,12 @@ public class AllDBHelper extends SQLiteOpenHelper {
         return total;
     }
 
-    public float getTotalCleaning(){
+    public float getTotalCleaning(String startD, String endD){
         SQLiteDatabase db = getReadableDatabase();
         String[] s = {"Cleaning"};
         Cursor cursor = db.rawQuery("select " + AllEntry.COLUMN_PRICE + " from "+ AllEntry.TABLE_NAME +
-                " where " + AllEntry.COLUMN_TYPE +
-                " = ?", s);
+                " where " + AllEntry.COLUMN_TYPE + " = ? and " +
+                AllEntry.COLUMN_DATE + " between " + startD + " and " + endD + ";", s);
         float total = 0;
         while(cursor.moveToNext()) {
             float price = Float.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_PRICE)));
@@ -176,12 +176,12 @@ public class AllDBHelper extends SQLiteOpenHelper {
         return total;
     }
 
-    public float getTotalPersonalCare() {
+    public float getTotalPersonalCare(String startD, String endD) {
         SQLiteDatabase db = getReadableDatabase();
         String[] s = {"PersonalCare"};
         Cursor cursor = db.rawQuery("select " + AllEntry.COLUMN_PRICE + " from "+ AllEntry.TABLE_NAME +
-                " where " + AllEntry.COLUMN_TYPE +
-                " = ?", s);
+                " where " + AllEntry.COLUMN_TYPE + " = ? and " +
+                AllEntry.COLUMN_DATE + " between " + startD + " and " + endD + ";", s);
         float total = 0;
         while(cursor.moveToNext()) {
             float price = Float.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_PRICE)));
@@ -190,12 +190,12 @@ public class AllDBHelper extends SQLiteOpenHelper {
         return total;
     }
 
-    public float getTotalHobby() {
+    public float getTotalHobby(String startD, String endD) {
         SQLiteDatabase db = getReadableDatabase();
         String[] s = {"Hobby"};
         Cursor cursor = db.rawQuery("select " + AllEntry.COLUMN_PRICE + " from "+ AllEntry.TABLE_NAME +
-                " where " + AllEntry.COLUMN_TYPE +
-                " = ?", s);
+                " where " + AllEntry.COLUMN_TYPE + " = ? and " +
+                AllEntry.COLUMN_DATE + " between " + startD + " and " + endD + ";", s);
         float total = 0;
         while(cursor.moveToNext()) {
             float price = Float.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_PRICE)));
@@ -204,12 +204,12 @@ public class AllDBHelper extends SQLiteOpenHelper {
         return total;
     }
 
-    public float getTotalOther() {
+    public float getTotalOther(String startD, String endD) {
         SQLiteDatabase db = getReadableDatabase();
         String[] s = {"Other"};
         Cursor cursor = db.rawQuery("select " + AllEntry.COLUMN_PRICE + " from "+ AllEntry.TABLE_NAME +
-                " where " + AllEntry.COLUMN_TYPE +
-                " = ?", s);
+                " where " + AllEntry.COLUMN_TYPE + " = ? and " +
+                AllEntry.COLUMN_DATE + " between " + startD + " and " + endD + ";", s);
         float total = 0;
         while(cursor.moveToNext()) {
             float price = Float.valueOf(cursor.getString(cursor.getColumnIndex(AllEntry.COLUMN_PRICE)));

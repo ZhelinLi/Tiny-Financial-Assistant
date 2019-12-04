@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     Button inputButton, typeButton, listButton;
     TextView moneyText;
     AllDBHelper db;
+    String today = "'2019-12-03'";
+    // today = "'" + df.format(c) + "'";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,16 +37,16 @@ public class MainActivity extends AppCompatActivity {
         moneyText = (TextView) findViewById(R.id.money);
 
         db = new AllDBHelper(getApplicationContext());
-        float foodCost = db.getTotalFood();
-        float transportationCost = db.getTotalTransportation();
-        float studyCost = db.getTotalStudy();
-        float housingCost = db.getTotalHousing();
-        float entertainmentCost = db.getTotalEntertainment();
-        float clothingCost = db.getTotalClothing();
-        float cleaningCost = db.getTotalCleaning();
-        float personalCareCost = db.getTotalPersonalCare();
-        float hobbyCost = db.getTotalHobby();
-        float otherCost = db.getTotalOther();
+        float foodCost = db.getTotalFood(today, today);
+        float transportationCost = db.getTotalTransportation(today, today);
+        float studyCost = db.getTotalStudy(today, today);
+        float housingCost = db.getTotalHousing(today, today);
+        float entertainmentCost = db.getTotalEntertainment(today, today);
+        float clothingCost = db.getTotalClothing(today, today);
+        float cleaningCost = db.getTotalCleaning(today, today);
+        float personalCareCost = db.getTotalPersonalCare(today, today);
+        float hobbyCost = db.getTotalHobby(today, today);
+        float otherCost = db.getTotalOther(today, today);
         float totalCost = foodCost + transportationCost + studyCost
                 + housingCost + entertainmentCost + clothingCost
                 + cleaningCost + personalCareCost + hobbyCost + otherCost;
@@ -145,16 +147,16 @@ public class MainActivity extends AppCompatActivity {
         moneyText = (TextView) findViewById(R.id.money);
 
         db = new AllDBHelper(getApplicationContext());
-        float foodCost = db.getTotalFood();
-        float transportationCost = db.getTotalTransportation();
-        float studyCost = db.getTotalStudy();
-        float housingCost = db.getTotalHousing();
-        float entertainmentCost = db.getTotalEntertainment();
-        float clothingCost = db.getTotalClothing();
-        float cleaningCost = db.getTotalCleaning();
-        float personalCareCost = db.getTotalPersonalCare();
-        float hobbyCost = db.getTotalHobby();
-        float otherCost = db.getTotalOther();
+        float foodCost = db.getTotalFood(today, today);
+        float transportationCost = db.getTotalTransportation(today, today);
+        float studyCost = db.getTotalStudy(today, today);
+        float housingCost = db.getTotalHousing(today, today);
+        float entertainmentCost = db.getTotalEntertainment(today, today);
+        float clothingCost = db.getTotalClothing(today, today);
+        float cleaningCost = db.getTotalCleaning(today, today);
+        float personalCareCost = db.getTotalPersonalCare(today, today);
+        float hobbyCost = db.getTotalHobby(today, today);
+        float otherCost = db.getTotalOther(today, today);
         float totalCost = foodCost + transportationCost + studyCost
                 + housingCost + entertainmentCost + clothingCost
                 + cleaningCost + personalCareCost + hobbyCost + otherCost;
