@@ -19,13 +19,16 @@ import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 public class TypeActivity extends AppCompatActivity {
     Button button_calender;
     TextView moneyText;
-    AllDBHelper db;
-    String  firstDay, today;
+    AllDBHelper db;d
+    String lastDay, firstDay, today;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,18 +38,25 @@ public class TypeActivity extends AppCompatActivity {
 
         HorizontalBarChart barChart = findViewById(R.id.barChart);
         button_calender = findViewById(R.id.floating);
+        Date c = Calendar.getInstance().getTime();
+
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        // today = "'2019-12-03'";
+        today = "'" + df.format(c) + "'";
+        if (lastDay == null || lastDay == "") lastDay = today;
+        firstDay = "'1970-01-01'";
 
         db = new AllDBHelper(getApplicationContext());
-        float foodCost = db.getTotalFood();
-        float transportationCost = db.getTotalTransportation();
-        float studyCost = db.getTotalStudy();
-        float housingCost = db.getTotalHousing();
-        float entertainmentCost = db.getTotalEntertainment();
-        float clothingCost = db.getTotalClothing();
-        float cleaningCost = db.getTotalCleaning();
-        float personalCareCost = db.getTotalPersonalCare();
-        float hobbyCost = db.getTotalHobby();
-        float otherCost = db.getTotalOther();
+        float foodCost = db.getTotalFood(firstDay, lastDay);
+        float transportationCost = db.getTotalTransportation(firstDay, lastDay);
+        float studyCost = db.getTotalStudy(firstDay, lastDay);
+        float housingCost = db.getTotalHousing(firstDay, lastDay);
+        float entertainmentCost = db.getTotalEntertainment(firstDay, lastDay);
+        float clothingCost = db.getTotalClothing(firstDay, lastDay);
+        float cleaningCost = db.getTotalCleaning(firstDay, lastDay);
+        float personalCareCost = db.getTotalPersonalCare(firstDay, lastDay);
+        float hobbyCost = db.getTotalHobby(firstDay, lastDay);
+        float otherCost = db.getTotalOther(firstDay, lastDay);
         float totalCost = foodCost + transportationCost + studyCost
                 + housingCost + entertainmentCost + clothingCost
                 + cleaningCost + personalCareCost + hobbyCost + otherCost;
@@ -87,16 +97,16 @@ public class TypeActivity extends AppCompatActivity {
 
     private ArrayList getData(){
         db = new AllDBHelper(getApplicationContext());
-        float foodCost = db.getTotalFood();
-        float transportationCost = db.getTotalTransportation();
-        float studyCost = db.getTotalStudy();
-        float housingCost = db.getTotalHousing();
-        float entertainmentCost = db.getTotalEntertainment();
-        float clothingCost = db.getTotalClothing();
-        float cleaningCost = db.getTotalCleaning();
-        float personalCareCost = db.getTotalPersonalCare();
-        float hobbyCost = db.getTotalHobby();
-        float otherCost = db.getTotalOther();
+        float foodCost = db.getTotalFood(firstDay, lastDay);
+        float transportationCost = db.getTotalTransportation(firstDay, lastDay);
+        float studyCost = db.getTotalStudy(firstDay, lastDay);
+        float housingCost = db.getTotalHousing(firstDay, lastDay);
+        float entertainmentCost = db.getTotalEntertainment(firstDay, lastDay);
+        float clothingCost = db.getTotalClothing(firstDay, lastDay);
+        float cleaningCost = db.getTotalCleaning(firstDay, lastDay);
+        float personalCareCost = db.getTotalPersonalCare(firstDay, lastDay);
+        float hobbyCost = db.getTotalHobby(firstDay, lastDay);
+        float otherCost = db.getTotalOther(firstDay, lastDay);
 
         ArrayList<BarEntry> entries = new ArrayList<>();
         entries.add(new BarEntry(0f, foodCost));

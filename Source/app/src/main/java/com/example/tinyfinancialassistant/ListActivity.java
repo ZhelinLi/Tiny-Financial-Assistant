@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -29,7 +30,7 @@ public class ListActivity extends AppCompatActivity {
     EditText searchText;
     Button searchButton, calendarButton;
     Spinner typeHead;
-    String typeSelected, firstDay, today;
+    String lastDay, firstDay, today;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +46,9 @@ public class ListActivity extends AppCompatActivity {
         db = new AllDBHelper(this);
         Date c = Calendar.getInstance().getTime();
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        // today = "'2019-12-03'";
         today = "'" + df.format(c) + "'";
+        if (lastDay == null || lastDay == "") lastDay = today;
         firstDay = "'1970-01-01'";
 
         ArrayAdapter<String> typeAdapter = new ArrayAdapter<String>(this,
@@ -57,21 +60,21 @@ public class ListActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if (adapterView.getItemAtPosition(i).equals("TYPE")) {
-                    fillData(searchText, firstDay, today, "");
+                    fillData(searchText, firstDay, lastDay, "");
                     searchButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            fillData(searchText, firstDay, today, "");
+                            fillData(searchText, firstDay, lastDay, "");
 
                         }
                     });
                 }
                 else {
-                    fillData(searchText, firstDay, today, typeHead.getSelectedItem().toString());
+                    fillData(searchText, firstDay, lastDay, typeHead.getSelectedItem().toString());
                     searchButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            fillData(searchText, firstDay, today, typeHead.getSelectedItem().toString());
+                            fillData(searchText, firstDay, lastDay, typeHead.getSelectedItem().toString());
 
                         }
                     });
@@ -131,28 +134,40 @@ public class ListActivity extends AppCompatActivity {
         builder.show();
     }
 
-    public void fillData(EditText searchText, String StartD, String EndD, String typeSelected) {
-        String s = searchText.getText().toString();
-        // ************** waiting calendar stuff **************
-        dataList = db.getAllData(s, StartD, EndD, typeSelected);
-        cAdapter = new ListAdapter(getApplicationContext(), dataList);
-        listView.setAdapter(cAdapter);
-    }
     // This method is called when the calendar activity finishes
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-    // get String data from Intent
+        // get String data from Intent
         if (requestCode == 1) {
             if(resultCode == Activity.RESULT_OK){
                 String date =data.getStringExtra("Date");
                 String temp = date.substring(1);
                 date = temp.substring(0, date.length() - 2);
                 String[] dateList = date.split(",");
-                firstDay = dateList[0];
-                today = dateList[dateList.length - 1];
-                Toast.makeText(ListActivity.this, firstDay + today , Toast.LENGTH_LONG).show();
+                firstDay = "'"+dateList[0]+"'";
+                //lastDay = "'"+dateList[dateList.length - 1]+"'";
+                lastDay = "'2019-12-12'";
+                Log.d("**firstDay", firstDay);
+                Log.d("**lastDay", lastDay);
+                fillData(searchText, firstDay, lastDay, typeHead.getSelectedItem().toString());
+                searchButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        fillData(searchText, firstDay, lastDay, typeHead.getSelectedItem().toString());
+
+                    }
+                });
+                Toast.makeText(ListActivity.this, firstDay + lastDay , Toast.LENGTH_LONG).show();
             }
         }
+    }
+
+    public void fillData(EditText searchText, String StartD, String EndD, String typeSelected) {
+        String s = searchText.getText().toString();
+        // ************** waiting calendar stuff **************
+        dataList = db.getAllData(s, StartD, EndD, typeSelected);
+        cAdapter = new ListAdapter(getApplicationContext(), dataList);
+        listView.setAdapter(cAdapter);
     }
 }
 
