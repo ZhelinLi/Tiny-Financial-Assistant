@@ -190,17 +190,16 @@ public class MainActivity extends AppCompatActivity {
                 + housingCost + entertainmentCost + clothingCost
                 + cleaningCost + personalCareCost + hobbyCost + otherCost;
         moneyText.setText(String.valueOf(totalCost));
-        moneyText.setText(String.valueOf(totalCost));
-        studyMoney.setText(String.valueOf(studyCost));
-        transportationMoney.setText(String.valueOf(transportationCost));
-        foodMoeny.setText(String.valueOf(foodCost));
-        housingMoney.setText(String.valueOf(housingCost));
-        entertainmentMoney.setText(String.valueOf(entertainmentCost));
-        clothingMoney.setText(String.valueOf(clothingCost));
-        cleaningMoney.setText(String.valueOf(cleaningCost));
-        personalMoney.setText(String.valueOf(personalCareCost));
-        hobbyMoney.setText(String.valueOf(hobbyCost));
-        otherMoney.setText(String.valueOf(otherCost));
+        studyMoney.setText("$"+ String.valueOf(studyCost));
+        transportationMoney.setText("$"+ String.valueOf(transportationCost));
+        foodMoeny.setText("$"+ String.valueOf(foodCost));
+        housingMoney.setText("$"+ String.valueOf(housingCost));
+        entertainmentMoney.setText("$"+ String.valueOf(entertainmentCost));
+        clothingMoney.setText("$"+ String.valueOf(clothingCost));
+        cleaningMoney.setText("$"+ String.valueOf(cleaningCost));
+        personalMoney.setText("$"+ String.valueOf(personalCareCost));
+        hobbyMoney.setText("$"+ String.valueOf(hobbyCost));
+        otherMoney.setText("$"+ String.valueOf(otherCost));
 
         PieChart pieChart = findViewById(R.id.pieChart);
 
