@@ -2,6 +2,7 @@ package com.example.tinyfinancialassistant;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -62,6 +63,16 @@ public class TypeActivity extends AppCompatActivity {
         xAxis.setDrawGridLines(false);
         xAxis.setEnabled(true);
         xAxis.setDrawAxisLine(false);
+        barDataSet.setColors(Color.parseColor("#F44336"),
+                Color.parseColor("#9C27B0"),
+                Color.parseColor("#3F51B5"),
+                Color.parseColor("#03A9F4"),
+                Color.parseColor("#009688"),
+                Color.parseColor("#8BC34A"),
+                Color.parseColor("#FFD600"),
+                Color.parseColor("#FF9800"),
+                Color.parseColor("#795548"),
+                Color.parseColor("#607D8B"));
 
 
         final String[] types = new String[]{"Food", "Transportation", "Study", "Housing", "Entertainment", "Clothing", "Cleaning", "PersonalCare", "Hobby", "Other"};
@@ -74,7 +85,6 @@ public class TypeActivity extends AppCompatActivity {
         barChart.getDescription().setEnabled(false);
         barChart.setFitBars(true);
         barChart.invalidate();
-        barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
 
         button_calender.setOnClickListener(new View.OnClickListener() {
             @Override
