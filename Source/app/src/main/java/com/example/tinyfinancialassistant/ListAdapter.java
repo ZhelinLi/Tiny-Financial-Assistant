@@ -73,7 +73,7 @@ public class ListAdapter extends ArrayAdapter<DataObject> {
                 bm = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.hobby);
                 break;
             case "Other":
-                bm = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.hobby);
+                bm = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.other);
                 break;
         }
         typeView = (ImageView) listItem.findViewById(R.id.typeView);

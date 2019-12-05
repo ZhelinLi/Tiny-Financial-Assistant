@@ -112,7 +112,7 @@
         android:id="@+id/data_list"
         android:layout_below="@id/listHead"
         android:layout_width="wrap_content"
-        android:layout_height="470dp"
+        android:layout_height="400dp"
         android:divider="#F2F4F5"
         android:dividerHeight="4dp"/>
 
