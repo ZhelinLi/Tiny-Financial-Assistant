@@ -91,36 +91,16 @@ public class MainActivity extends AppCompatActivity {
         pieChart.setTouchEnabled(true);
 
         ArrayList<PieEntry> dollars = new ArrayList<>();
-        if (foodCost != 0.0) {
             dollars.add(new PieEntry(foodCost, ""));
-        }
-        if (transportationCost != 0.0) {
             dollars.add(new PieEntry(transportationCost, ""));
-        }
-        if (studyCost != 0.0) {
             dollars.add(new PieEntry(studyCost, ""));
-        }
-        if (housingCost != 0.0) {
             dollars.add(new PieEntry(housingCost, ""));
-        }
-        if (entertainmentCost != 0.0) {
             dollars.add(new PieEntry(entertainmentCost, ""));
-        }
-        if (clothingCost != 0.0) {
             dollars.add(new PieEntry(clothingCost, ""));
-        }
-        if (cleaningCost != 0.0) {
             dollars.add(new PieEntry(cleaningCost, ""));
-        }
-        if (personalCareCost != 0.0) {
             dollars.add(new PieEntry(personalCareCost, ""));
-        }
-        if (hobbyCost != 0.0) {
             dollars.add(new PieEntry(hobbyCost, ""));
-        }
-        if (otherCost != 0.0) {
             dollars.add(new PieEntry(otherCost, ""));
-        }
 
         PieDataSet dataSet = new PieDataSet(dollars, "Type");
         dataSet.setSliceSpace(3f);
@@ -218,37 +198,16 @@ public class MainActivity extends AppCompatActivity {
         pieChart.setTouchEnabled(true);
 
         ArrayList<PieEntry> dollars = new ArrayList<>();
-        if (foodCost != 0.0) {
-            dollars.add(new PieEntry(foodCost, ""));
-        }
-        if (transportationCost != 0.0) {
-            dollars.add(new PieEntry(transportationCost, ""));
-        }
-        if (studyCost != 0.0) {
-            dollars.add(new PieEntry(studyCost, ""));
-        }
-        if (housingCost != 0.0) {
-            dollars.add(new PieEntry(housingCost, ""));
-        }
-        if (entertainmentCost != 0.0) {
-            dollars.add(new PieEntry(entertainmentCost, ""));
-        }
-        if (clothingCost != 0.0) {
-            dollars.add(new PieEntry(clothingCost, ""));
-        }
-        if (cleaningCost != 0.0) {
-            dollars.add(new PieEntry(cleaningCost, ""));
-        }
-        if (personalCareCost != 0.0) {
-            dollars.add(new PieEntry(personalCareCost, ""));
-        }
-        if (hobbyCost != 0.0) {
-            dollars.add(new PieEntry(hobbyCost, ""));
-        }
-        if (otherCost != 0.0) {
-            dollars.add(new PieEntry(otherCost, ""));
-        }
-
+        dollars.add(new PieEntry(foodCost, ""));
+        dollars.add(new PieEntry(transportationCost, ""));
+        dollars.add(new PieEntry(studyCost, ""));
+        dollars.add(new PieEntry(housingCost, ""));
+        dollars.add(new PieEntry(entertainmentCost, ""));
+        dollars.add(new PieEntry(clothingCost, ""));
+        dollars.add(new PieEntry(cleaningCost, ""));
+        dollars.add(new PieEntry(personalCareCost, ""));
+        dollars.add(new PieEntry(hobbyCost, ""));
+        dollars.add(new PieEntry(otherCost, ""));
 
         PieDataSet dataSet = new PieDataSet(dollars, "Type");
         dataSet.setSliceSpace(3f);
