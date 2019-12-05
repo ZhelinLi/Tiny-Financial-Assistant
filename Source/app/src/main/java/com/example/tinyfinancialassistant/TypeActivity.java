@@ -62,7 +62,7 @@ public class TypeActivity extends AppCompatActivity {
             }
         });
 
-        HorizontalBarChart barChart = findViewById(R.id.barChart);
+        // HorizontalBarChart barChart = findViewById(R.id.barChart);
         barChart = findViewById(R.id.barChart);
         button_calender = findViewById(R.id.floating);
 
@@ -184,7 +184,16 @@ public class TypeActivity extends AppCompatActivity {
                 xAxis.setDrawGridLines(false);
                 xAxis.setEnabled(true);
                 xAxis.setDrawAxisLine(false);
-
+                barDataSet.setColors(Color.parseColor("#F44336"),
+                        Color.parseColor("#9C27B0"),
+                        Color.parseColor("#3F51B5"),
+                        Color.parseColor("#03A9F4"),
+                        Color.parseColor("#009688"),
+                        Color.parseColor("#8BC34A"),
+                        Color.parseColor("#FFD600"),
+                        Color.parseColor("#FF9800"),
+                        Color.parseColor("#795548"),
+                        Color.parseColor("#607D8B"));
 
                 final String[] types = new String[]{"Food", "Transportation", "Study", "Housing", "Entertainment", "Clothing", "Cleaning", "PersonalCare", "Hobby", "Other"};
                 IndexAxisValueFormatter formatter = new IndexAxisValueFormatter(types);
@@ -196,7 +205,6 @@ public class TypeActivity extends AppCompatActivity {
                 barChart.getDescription().setEnabled(false);
                 barChart.setFitBars(true);
                 barChart.invalidate();
-                barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
 
                 Toast.makeText(TypeActivity.this, firstDay + today , Toast.LENGTH_LONG).show();
             }
