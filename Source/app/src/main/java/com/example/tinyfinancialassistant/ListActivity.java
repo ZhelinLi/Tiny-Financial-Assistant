@@ -120,7 +120,7 @@ public class ListActivity extends AppCompatActivity {
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(getApplicationContext(),
-                                "deleted",
+                                "Deleted",
                                 Toast.LENGTH_SHORT).show();
                         DataObject currentObj = dataList.get(i);
                         db = new AllDBHelper(getApplicationContext());

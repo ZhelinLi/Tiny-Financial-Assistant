@@ -259,7 +259,6 @@ public class MainActivity extends AppCompatActivity {
                 Color.parseColor("#9C27B0"),
                 Color.parseColor("#3F51B5"),
                 Color.parseColor("#03A9F4"),
-                Color.parseColor("#3F51B5"),
                 Color.parseColor("#009688"),
                 Color.parseColor("#8BC34A"),
                 Color.parseColor("#FFD600"),
