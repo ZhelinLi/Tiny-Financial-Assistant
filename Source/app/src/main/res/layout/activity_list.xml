@@ -78,13 +78,15 @@
         android:id="@+id/listHead"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="@android:color/holo_blue_light"
+        android:layout_marginTop="8dp"
+        android:background="#F2F4F5"
         android:weightSum="100">
 
         <Spinner
             android:id="@+id/type_head"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:textStyle="bold"
             android:layout_weight="35" />
 
         <TextView
@@ -93,7 +95,8 @@
             android:gravity="center"
             android:layout_height="match_parent"
             android:text="DATA"
-            android:layout_weight="50" />
+            android:textStyle="bold"
+            android:layout_weight="35" />
 
         <TextView
             android:id="@+id/cost_head"
@@ -101,21 +104,24 @@
             android:gravity="center"
             android:layout_height="match_parent"
             android:text="COST"
-            android:layout_weight="15" />
+            android:textStyle="bold"
+            android:layout_weight="38" />
     </LinearLayout>
 
     <ListView
         android:id="@+id/data_list"
         android:layout_below="@id/listHead"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:divider="#F2F4F5"
+        android:dividerHeight="8px"/>
 
     <Button
         android:id="@+id/calendarButton"
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:layout_marginLeft="330dp"
-        android:layout_marginTop="680dp"
+        android:layout_marginTop="670dp"
         android:clickable="true"
         android:background="@drawable/floating_button"
         android:elevation="4dp"/>
