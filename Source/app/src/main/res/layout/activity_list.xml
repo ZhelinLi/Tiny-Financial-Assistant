@@ -112,7 +112,7 @@
         android:id="@+id/data_list"
         android:layout_below="@id/listHead"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="470dp"
         android:divider="#F2F4F5"
         android:dividerHeight="4dp"/>
 
@@ -121,8 +121,81 @@
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:layout_marginLeft="330dp"
-        android:layout_marginTop="670dp"
+        android:layout_marginTop="600dp"
         android:clickable="true"
         android:background="@drawable/floating_button"
         android:elevation="4dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom" >
+
+        <Button
+            android:id="@+id/homeButton"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/home_button" />
+
+        <Button
+            android:id="@+id/inputButton"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_button" />
+
+        <Button
+            android:id="@+id/typeButton"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/report_button" />
+
+        <Button
+            android:id="@+id/listButton"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/list_button" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="32dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/home"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="68dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/input"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="68dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/report"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="70dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/list"
+            android:textStyle="bold"/>
+    </LinearLayout>
 </RelativeLayout>

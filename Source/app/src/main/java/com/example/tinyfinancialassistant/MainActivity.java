@@ -92,34 +92,34 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<PieEntry> dollars = new ArrayList<>();
         if (foodCost != 0.0) {
-            dollars.add(new PieEntry(foodCost, "Food"));
+            dollars.add(new PieEntry(foodCost, ""));
         }
         if (transportationCost != 0.0) {
-            dollars.add(new PieEntry(transportationCost, "Transportation"));
+            dollars.add(new PieEntry(transportationCost, ""));
         }
         if (studyCost != 0.0) {
-            dollars.add(new PieEntry(studyCost, "Study"));
+            dollars.add(new PieEntry(studyCost, ""));
         }
         if (housingCost != 0.0) {
-            dollars.add(new PieEntry(housingCost, "Housing"));
+            dollars.add(new PieEntry(housingCost, ""));
         }
         if (entertainmentCost != 0.0) {
-            dollars.add(new PieEntry(entertainmentCost, "Entertainment"));
+            dollars.add(new PieEntry(entertainmentCost, ""));
         }
         if (clothingCost != 0.0) {
-            dollars.add(new PieEntry(clothingCost, "Clothing"));
+            dollars.add(new PieEntry(clothingCost, ""));
         }
         if (cleaningCost != 0.0) {
-            dollars.add(new PieEntry(cleaningCost, "Cleaning"));
+            dollars.add(new PieEntry(cleaningCost, ""));
         }
         if (personalCareCost != 0.0) {
-            dollars.add(new PieEntry(personalCareCost, "Personal Care"));
+            dollars.add(new PieEntry(personalCareCost, ""));
         }
         if (hobbyCost != 0.0) {
-            dollars.add(new PieEntry(hobbyCost, "Hobbies"));
+            dollars.add(new PieEntry(hobbyCost, ""));
         }
         if (otherCost != 0.0) {
-            dollars.add(new PieEntry(otherCost, "Other"));
+            dollars.add(new PieEntry(otherCost, ""));
         }
 
         PieDataSet dataSet = new PieDataSet(dollars, "Type");
@@ -129,7 +129,6 @@ public class MainActivity extends AppCompatActivity {
                 Color.parseColor("#9C27B0"),
                 Color.parseColor("#3F51B5"),
                 Color.parseColor("#03A9F4"),
-                Color.parseColor("#3F51B5"),
                 Color.parseColor("#009688"),
                 Color.parseColor("#8BC34A"),
                 Color.parseColor("#FFD600"),
@@ -139,9 +138,8 @@ public class MainActivity extends AppCompatActivity {
         pieChart.animateY(2000, Easing.EaseInOutCubic);
 
         PieData data = new PieData((dataSet));
-        data.setValueTextSize(12f);
-        data.setValueTextColor(Color.YELLOW);
         pieChart.setData(data);
+        data.setDrawValues(false);
 
         inputButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -221,34 +219,34 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<PieEntry> dollars = new ArrayList<>();
         if (foodCost != 0.0) {
-            dollars.add(new PieEntry(foodCost, "Food"));
+            dollars.add(new PieEntry(foodCost, ""));
         }
         if (transportationCost != 0.0) {
-            dollars.add(new PieEntry(transportationCost, "Transportation"));
+            dollars.add(new PieEntry(transportationCost, ""));
         }
         if (studyCost != 0.0) {
-            dollars.add(new PieEntry(studyCost, "Study"));
+            dollars.add(new PieEntry(studyCost, ""));
         }
         if (housingCost != 0.0) {
-            dollars.add(new PieEntry(housingCost, "Housing"));
+            dollars.add(new PieEntry(housingCost, ""));
         }
         if (entertainmentCost != 0.0) {
-            dollars.add(new PieEntry(entertainmentCost, "Entertainment"));
+            dollars.add(new PieEntry(entertainmentCost, ""));
         }
         if (clothingCost != 0.0) {
-            dollars.add(new PieEntry(clothingCost, "Clothing"));
+            dollars.add(new PieEntry(clothingCost, ""));
         }
         if (cleaningCost != 0.0) {
-            dollars.add(new PieEntry(cleaningCost, "Cleaning"));
+            dollars.add(new PieEntry(cleaningCost, ""));
         }
         if (personalCareCost != 0.0) {
-            dollars.add(new PieEntry(personalCareCost, "Personal Care"));
+            dollars.add(new PieEntry(personalCareCost, ""));
         }
         if (hobbyCost != 0.0) {
-            dollars.add(new PieEntry(hobbyCost, "Hobbies"));
+            dollars.add(new PieEntry(hobbyCost, ""));
         }
         if (otherCost != 0.0) {
-            dollars.add(new PieEntry(otherCost, "Other"));
+            dollars.add(new PieEntry(otherCost, ""));
         }
 
 
@@ -268,8 +266,7 @@ public class MainActivity extends AppCompatActivity {
         pieChart.animateY(2000, Easing.EaseInOutCubic);
 
         PieData data = new PieData((dataSet));
-        data.setValueTextSize(12f);
-        data.setValueTextColor(Color.YELLOW);
+        data.setDrawValues(false);
         pieChart.setData(data);
     }
 

@@ -25,7 +25,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class TypeActivity extends AppCompatActivity {
-    Button button_calender;
+    Button button_calender, homeButton, inputButton, listButton;
     TextView moneyText;
     AllDBHelper db;
     String lastDay, firstDay, today;
@@ -35,6 +35,30 @@ public class TypeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_type);
         moneyText = (TextView) findViewById(R.id.type_money);
+
+        homeButton = findViewById(R.id.homeButton);
+        inputButton = findViewById(R.id.inputButton);
+        listButton = findViewById(R.id.listButton);
+
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TypeActivity.this, MainActivity.class));
+            }
+        });
+
+        inputButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TypeActivity.this, InputActivity.class));
+            }
+        });
+        listButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TypeActivity.this, ListActivity.class));
+            }
+        });
 
         HorizontalBarChart barChart = findViewById(R.id.barChart);
         button_calender = findViewById(R.id.floating);

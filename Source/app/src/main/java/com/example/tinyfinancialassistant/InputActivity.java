@@ -3,6 +3,7 @@ package com.example.tinyfinancialassistant;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -16,13 +17,38 @@ public class InputActivity extends AppCompatActivity {
     EditText inputEditText, inputNote;
     Button inputFoodButton, inputTransportationButton, inputStudyButton, inputHousingButton,
             inputEntertainmentButton, inputClothingButton, inputCleaningButton,
-            inputPersonalCareButton, inputHobbyButton, inputOtherButton, inputAddItemButton;
+            inputPersonalCareButton, inputHobbyButton, inputOtherButton, inputAddItemButton,
+            homeButton, typeButton, listButton;
     String type = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input);
+
+        homeButton = findViewById(R.id.homeButton);
+        typeButton = findViewById(R.id.typeButton);
+        listButton = findViewById(R.id.listButton);
+
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(InputActivity.this, MainActivity.class));
+            }
+        });
+
+        typeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(InputActivity.this, TypeActivity.class));
+            }
+        });
+        listButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(InputActivity.this, ListActivity.class));
+            }
+        });
 
         AllDBHelper dbHelper = new AllDBHelper(this);
         mDB = dbHelper.getWritableDatabase();

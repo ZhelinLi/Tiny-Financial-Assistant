@@ -7,6 +7,30 @@
     android:background="#DEE4E9"
     tools:context=".TypeActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.github.mikephil.charting.charts.HorizontalBarChart
+                android:id="@+id/barChart"
+                android:layout_width="375dp"
+                android:layout_height="550dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="185dp"
+                tools:layout_editor_absoluteX="0dp"
+                android:background="@drawable/rectangle_16"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+        </LinearLayout>
+    </ScrollView>
+
     <View
         android:id="@+id/rectangle_2"
         android:layout_width="416dp"
@@ -65,30 +89,86 @@
         android:textStyle="bold"
         android:gravity="center_horizontal|top" />
 
-    <View
-        android:layout_width="376dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="18dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="190dp"
-        android:background="@drawable/rectangle_16" />
-
-    <com.github.mikephil.charting.charts.HorizontalBarChart
-        android:id="@+id/barChart"
-        android:layout_width="368dp"
-        android:layout_height="550dp"
-        android:layout_marginLeft="22dp"
-        android:layout_marginTop="200dp"
-        tools:layout_editor_absoluteX="0dp" />
-
     <Button
         android:id="@+id/floating"
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:layout_marginLeft="330dp"
-        android:layout_marginTop="675dp"
+        android:layout_marginTop="600dp"
         android:clickable="true"
         android:background="@drawable/floating_button"
         android:elevation="4dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom" >
+
+        <Button
+            android:id="@+id/homeButton"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/home_button" />
+
+        <Button
+            android:id="@+id/inputButton"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_button" />
+
+        <Button
+            android:id="@+id/typeButton"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/report_button" />
+
+        <Button
+            android:id="@+id/listButton"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/list_button" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="32dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/home"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="68dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/input"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="66dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/report"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="70dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/list"/>
+    </LinearLayout>
 </RelativeLayout>

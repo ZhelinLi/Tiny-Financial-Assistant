@@ -29,7 +29,7 @@ public class ListActivity extends AppCompatActivity {
     private ListView listView;
     private ListAdapter cAdapter;
     EditText searchText;
-    Button searchButton, calendarButton;
+    Button searchButton, calendarButton, homeButton, typeButton, inputButton;
     Spinner typeHead;
     String lastDay, firstDay, today;
 
@@ -43,6 +43,30 @@ public class ListActivity extends AppCompatActivity {
         searchButton = (Button) findViewById(R.id.searchButton);
         calendarButton = (Button) findViewById(R.id.calendarButton);
         typeHead = (Spinner) findViewById(R.id.type_head);
+        homeButton = findViewById(R.id.homeButton);
+        inputButton = findViewById(R.id.inputButton);
+        typeButton = findViewById(R.id.typeButton);
+
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ListActivity.this, MainActivity.class));
+            }
+        });
+
+        inputButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ListActivity.this, InputActivity.class));
+            }
+        });
+        typeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ListActivity.this, TypeActivity.class));
+            }
+        });
+
 
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
