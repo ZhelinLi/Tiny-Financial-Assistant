@@ -17,6 +17,7 @@ import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -27,7 +28,8 @@ public class TypeActivity extends AppCompatActivity {
     Button button_calender;
     TextView moneyText;
     AllDBHelper db;
-    String lastDay, firstDay, today;
+    String lastDay, firstDay, defaultDay, today;
+    HorizontalBarChart barChart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,31 +37,21 @@ public class TypeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_type);
         moneyText = (TextView) findViewById(R.id.type_money);
 
-        HorizontalBarChart barChart = findViewById(R.id.barChart);
+        barChart = findViewById(R.id.barChart);
         button_calender = findViewById(R.id.floating);
-        Date c = Calendar.getInstance().getTime();
 
+        Date c = Calendar.getInstance().getTime();
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-        // today = "'2019-12-03'";
+
         today = "'" + df.format(c) + "'";
         if (lastDay == null || lastDay == "") lastDay = today;
-        firstDay = "'1970-01-01'";
+        defaultDay = today.substring(0,9)  + "01" + "'";
+        if (firstDay == null || firstDay == "") {
+            firstDay = defaultDay;
+        }
 
         db = new AllDBHelper(getApplicationContext());
-        float foodCost = db.getTotalFood(firstDay, lastDay);
-        float transportationCost = db.getTotalTransportation(firstDay, lastDay);
-        float studyCost = db.getTotalStudy(firstDay, lastDay);
-        float housingCost = db.getTotalHousing(firstDay, lastDay);
-        float entertainmentCost = db.getTotalEntertainment(firstDay, lastDay);
-        float clothingCost = db.getTotalClothing(firstDay, lastDay);
-        float cleaningCost = db.getTotalCleaning(firstDay, lastDay);
-        float personalCareCost = db.getTotalPersonalCare(firstDay, lastDay);
-        float hobbyCost = db.getTotalHobby(firstDay, lastDay);
-        float otherCost = db.getTotalOther(firstDay, lastDay);
-        float totalCost = foodCost + transportationCost + studyCost
-                + housingCost + entertainmentCost + clothingCost
-                + cleaningCost + personalCareCost + hobbyCost + otherCost;
-        moneyText.setText(String.valueOf(totalCost));
+        fillTextData(firstDay, lastDay);
 
         BarDataSet barDataSet = new BarDataSet(getData(), "Report");
 
@@ -96,13 +88,13 @@ public class TypeActivity extends AppCompatActivity {
 
     private ArrayList getData(){
         db = new AllDBHelper(getApplicationContext());
-        float foodCost = db.getTotalFood(firstDay, lastDay);
-        float transportationCost = db.getTotalTransportation(firstDay, lastDay);
-        float studyCost = db.getTotalStudy(firstDay, lastDay);
-        float housingCost = db.getTotalHousing(firstDay, lastDay);
-        float entertainmentCost = db.getTotalEntertainment(firstDay, lastDay);
-        float clothingCost = db.getTotalClothing(firstDay, lastDay);
-        float cleaningCost = db.getTotalCleaning(firstDay, lastDay);
+        float foodCost = db.getTotalFood(defaultDay, lastDay);
+        float transportationCost = db.getTotalTransportation(defaultDay, lastDay);
+        float studyCost = db.getTotalStudy(defaultDay, lastDay);
+        float housingCost = db.getTotalHousing(defaultDay, lastDay);
+        float entertainmentCost = db.getTotalEntertainment(defaultDay, lastDay);
+        float clothingCost = db.getTotalClothing(defaultDay, lastDay);
+        float cleaningCost = db.getTotalCleaning(defaultDay, lastDay);
         float personalCareCost = db.getTotalPersonalCare(firstDay, lastDay);
         float hobbyCost = db.getTotalHobby(firstDay, lastDay);
         float otherCost = db.getTotalOther(firstDay, lastDay);
@@ -130,12 +122,67 @@ public class TypeActivity extends AppCompatActivity {
                 String date =data.getStringExtra("Date");
                 String temp = date.substring(1);
                 date = temp.substring(0, date.length() - 2);
-                String[] dateList = date.split(",");
-                firstDay = dateList[0];
-                today = dateList[dateList.length - 1];
+                String[] dateList = date.split(", ");
+                firstDay = "'"+dateList[0]+"'";
+                lastDay = "'"+dateList[dateList.length - 1]+"'";
+
+                fillTextData(firstDay, lastDay);
+
+                ArrayList<BarEntry> entries = new ArrayList<>();
+                entries.add(new BarEntry(0f, db.getTotalFood(firstDay, lastDay)));
+                entries.add(new BarEntry(1f, db.getTotalTransportation(firstDay, lastDay)));
+                entries.add(new BarEntry(2f, db.getTotalStudy(firstDay, lastDay)));
+                entries.add(new BarEntry(3f, db.getTotalHousing(firstDay, lastDay)));
+                entries.add(new BarEntry(4f, db.getTotalEntertainment(firstDay, lastDay)));
+                entries.add(new BarEntry(5f, db.getTotalClothing(firstDay, lastDay)));
+                entries.add(new BarEntry(6f, db.getTotalCleaning(firstDay, lastDay)));
+                entries.add(new BarEntry(7f, db.getTotalPersonalCare(firstDay, lastDay)));
+                entries.add(new BarEntry(8f, db.getTotalHobby(firstDay, lastDay)));
+                entries.add(new BarEntry(9f, db.getTotalOther(firstDay, lastDay)));
+
+                BarDataSet barDataSet = new BarDataSet(entries, "Report");
+
+                BarData barData = new BarData(barDataSet);
+                XAxis xAxis = barChart.getXAxis();
+                xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+                xAxis.setGranularity(1f);
+                xAxis.setDrawGridLines(false);
+                xAxis.setEnabled(true);
+                xAxis.setDrawAxisLine(false);
+
+
+                final String[] types = new String[]{"Food", "Transportation", "Study", "Housing", "Entertainment", "Clothing", "Cleaning", "PersonalCare", "Hobby", "Other"};
+                IndexAxisValueFormatter formatter = new IndexAxisValueFormatter(types);
+                xAxis.setValueFormatter(formatter);
+                xAxis.setLabelCount(barDataSet.getEntryCount());
+                barChart.setData(barData);
+                barChart.animateXY(2000, 2000);
+                barChart.getLegend().setEnabled(false);
+                barChart.getDescription().setEnabled(false);
+                barChart.setFitBars(true);
+                barChart.invalidate();
+                barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
+
                 Toast.makeText(TypeActivity.this, firstDay + today , Toast.LENGTH_LONG).show();
             }
         }
+    }
+
+    public void fillTextData(String StartD, String EndD) {
+        float foodCost = db.getTotalFood(StartD, EndD);
+        float transportationCost = db.getTotalTransportation(StartD, EndD);
+        float studyCost = db.getTotalStudy(StartD, EndD);
+        float housingCost = db.getTotalHousing(StartD, EndD);
+        float entertainmentCost = db.getTotalEntertainment(StartD, EndD);
+        float clothingCost = db.getTotalClothing(StartD, EndD);
+        float cleaningCost = db.getTotalCleaning(StartD, EndD);
+        float personalCareCost = db.getTotalPersonalCare(StartD, EndD);
+        float hobbyCost = db.getTotalHobby(StartD, EndD);
+        float otherCost = db.getTotalOther(StartD, EndD);
+        float totalCost = foodCost + transportationCost + studyCost
+                + housingCost + entertainmentCost + clothingCost
+                + cleaningCost + personalCareCost + hobbyCost + otherCost;
+        moneyText.setText(String.valueOf(totalCost));
     }
 }
 
