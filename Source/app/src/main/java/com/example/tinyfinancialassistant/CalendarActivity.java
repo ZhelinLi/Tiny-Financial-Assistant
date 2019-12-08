@@ -3,7 +3,6 @@ package com.example.tinyfinancialassistant;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -39,7 +38,6 @@ public class CalendarActivity extends AppCompatActivity {
         ArrayList<Integer> list = new ArrayList<>();
         list.add(2);
 
-        //calendar.deactivateDates(list);
         final ArrayList<Date> arrayList = new ArrayList<>();
         try {
             SimpleDateFormat dateformat = new SimpleDateFormat("dd-MM-yyyy");
@@ -55,8 +53,8 @@ public class CalendarActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        calendar.init(lastYear.getTime(), nextYear.getTime(), new SimpleDateFormat("MMMM, YYYY", Locale.getDefault())) //
-                .inMode(CalendarPickerView.SelectionMode.RANGE) //
+        calendar.init(lastYear.getTime(), nextYear.getTime(), new SimpleDateFormat("MMMM, YYYY", Locale.getDefault()))
+                .inMode(CalendarPickerView.SelectionMode.RANGE)
                 .withHighlightedDates(arrayList);
 
         calendar.scrollToDate(new Date());
@@ -75,8 +73,6 @@ public class CalendarActivity extends AppCompatActivity {
                 intent.putExtra("Date", String.valueOf(dates));
                 setResult(Activity.RESULT_OK,intent);
                 finish();
-                Log.d("date", String.valueOf(dates));
-                //Toast.makeText(CalendarActivity.this, calendar.getSelectedDates().toString(), Toast.LENGTH_LONG).show();
             }
         });
     }

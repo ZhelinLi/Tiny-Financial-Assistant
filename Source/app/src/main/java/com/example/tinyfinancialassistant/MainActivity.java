@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     AllDBHelper db;
     Date c = Calendar.getInstance().getTime();
     SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-    // today = "'2019-12-03'";
     String today = "'" + df.format(c) + "'";
 
     @Override

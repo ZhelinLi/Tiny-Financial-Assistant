@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,8 +16,6 @@ import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
-import com.github.mikephil.charting.utils.ColorTemplate;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -116,7 +113,6 @@ public class TypeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(TypeActivity.this, CalendarActivity.class);
                 startActivityForResult(i, 1);
-                //startActivity(new Intent(TypeActivity.this, CalendarActivity.class));
             }
         });
     }
@@ -205,8 +201,6 @@ public class TypeActivity extends AppCompatActivity {
                 barChart.getDescription().setEnabled(false);
                 barChart.setFitBars(true);
                 barChart.invalidate();
-
-                Toast.makeText(TypeActivity.this, firstDay + today , Toast.LENGTH_LONG).show();
             }
         }
     }

@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -131,7 +130,6 @@ public class ListActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(ListActivity.this, CalendarActivity.class);
                 startActivityForResult(i, 1);
-                //startActivity(new Intent(getApplicationContext(), CalendarActivity.class));
             }
         });
     }
@@ -173,7 +171,6 @@ public class ListActivity extends AppCompatActivity {
                 String[] dateList = date.split(", ");
                 firstDay = "'"+dateList[0]+"'";
                 lastDay = "'"+dateList[dateList.length - 1]+"'";
-                //lastDay = "'2019-12-04'";
 
                 if (typeHead.getSelectedItem().toString().equals("TYPE")) {
                     fillData(searchText, firstDay, lastDay, "");
@@ -196,8 +193,6 @@ public class ListActivity extends AppCompatActivity {
                         }
                     });
                 }
-
-                Toast.makeText(ListActivity.this, firstDay + lastDay , Toast.LENGTH_LONG).show();
             }
         }
     }
